@@ -6,12 +6,3 @@
  */gfg
 ?>
 thfghhfhtgeddgd
-
-
-+
-gh
-fg
-dxg
-dg
-fgvc
-gdyf
