@@ -1,0 +1,25 @@
+
+RewriteEngine on
+
+
+RewriteBase /
+
+#RewriteCond %{HTTP_HOST} !^www\.
+#RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+
+
+#
+# RewriteRule ^([0-9a-zA-Z]+)$ user.php?id=$1
+#
+RewriteRule start$ start.php
+RewriteRule schreiben$ write_article.php
+RewriteRule mypaperly$ mypaperly.php
+RewriteRule abmelden$ logout.php
+RewriteRule entdecken$ entdecken.php
+RewriteRule einstellungen$ profil.php
+RewriteRule twitter$ http://twitter.com/paperly_de [NC]
+RewriteRule facebook$ http://facebook.com/paperlyde [NC]
+RewriteRule ^article/([0-9a-zA-Z]+)$ index.php?artid=$1
+RewriteRule ^([0-9a-zA-Z]+)$ user.php?id=$1
+RewriteRule ^town/([0-9a-zA-Z]+)$ index.php?location=$1
+RewriteRule ^articleopen/([0-9a-zA-Z]+)$ article.php?artid=$1

@@ -58,7 +58,7 @@ if ($creator == -1) {
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang="de">
     <!--<![endif]--><head>
-        <base href="http://paperly.de/">
+        <base href="http://localhost">
 
         <meta charset="utf-8">
     </head>
@@ -100,7 +100,7 @@ if ($creator == -1) {
         <script type="text/javascript" src="js/libs/jquery-1.8.2.min.js"></script>
         <script type = 'text/javascript'>
             if (typeof history.pushState !== "undefined") {
-                parent.history.pushState(null, 'paperly Artikel', '<?php echo "http://www.paperly.de/article/" . $art_id . ""; ?>');
+                parent.history.pushState(null, 'paperly Artikel', '<?php echo "http://localhost/article/" . $art_id . ""; ?>');
             }
         </script> 
 
@@ -125,7 +125,7 @@ if ($creator == -1) {
                 $sql_bild = "SELECT * FROM `ersatzbilder` WHERE name = '" . substr($image, 0, -4) . "'";
                 $result_bild = mysql_query($sql_bild);
                 $quellen_bild = "";
-                $bild_link = "http://www.paperly.de";
+                $bild_link = "http://localhost";
                 $bild_fotograf = "paperly User";
                 $bild_quelle = "paperly";
                 $row_bild = mysql_fetch_object($result_bild);
