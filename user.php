@@ -364,7 +364,7 @@ $user_id =  $_SESSION["user_id"];
                                                     fitToView: false,
                                                     autoSize: false,
                                                     beforeClose: function() {
-                                                        parent.history.pushState(null, 'paperly', 'http://paperly.de/<?php echo $nickname; ?>');
+                                                        parent.history.pushState(null, 'paperly', 'http://localhost/<?php echo $nickname; ?>');
                                                     }
                                                 });
                                             });
