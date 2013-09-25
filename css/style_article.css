@@ -1,0 +1,157 @@
+
+body { 
+    margin: 0; 
+    padding: 0px;
+    width:875px;
+    font-family: "HelveticaNeue-Light", Arial, Helvetica, sans-serif; font-size:14px; color:#666666;
+
+
+}
+
+h1 {
+    margin:0px;
+}
+
+.article_titel_box
+{	
+    background-color: #5E972E;
+    border: 1.5px  solid #B1B1B1;
+    box-shadow: 0 0 54px #B1B1B1;
+    color:#FFFFFF;
+    padding: 15px;
+    overflow:auto;
+
+}
+.title_box_l
+{
+    float:left;
+    width:500px;
+
+}
+.title_box_r
+{
+    float:right;
+
+}
+.article_text
+{	
+    margin: 15px;
+}
+
+.article_l
+{
+    float:left;
+    width: 545px;
+
+    margin-right:10px;
+    padding-right:10px;
+    min-height: 800px;
+
+
+
+}
+
+.article_r
+{
+    float:left;
+    width: 250px;
+    margin-top: 10px;
+    padding-left:10px;
+
+
+
+
+}
+
+.bild
+{
+    border-color:#BEBEBE;
+    border-width:1px;
+    border-style: solid;
+
+
+
+
+}
+
+a {
+    color: #5E972E;
+    text-decoration: none;
+}
+#likebox_comment{
+float: left;
+margin-left: 10px;
+    background-image: url("../images/design/likebox_comment_icon.png");
+    height:18px; 
+    width: 21px;
+}
+
+#likebox_up{
+    float: left;
+
+    background-image: url("../images/design/likebox_up_icon.png");
+    height:18px; 
+    width: 18px;
+}
+
+#likebox_down{
+    float: left;
+    margin-left: 10px;
+    background-image: url("../images/design/likebox_down_icon.png");
+    height:18px; 
+    width: 18px;
+}
+#likebox_count{
+    margin-left: 5px;
+    background-position:30px 0;
+    border:1px solid #E0DFDF;
+    border-bottom-left-radius:2px;
+    border-bottom-right-radius:2px;
+    border-top-left-radius:2px;
+    border-top-right-radius:2px;
+    cursor:pointer;
+    height:18px;
+    float: left;
+    width: 18px;
+    padding: 2px;
+    text-align: center;
+
+
+}
+.likebox{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    float: left;
+    width: 180px;
+    padding: 10px;
+    padding-bottom: 0px;
+
+}
+.article-post-time{
+    float: left;
+    width: 310px;
+    padding-top:10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    text-align: right;
+
+}
+
+#commentfield  { 
+    width: 500px;
+    min-height: 190px;
+    margin: 10px;
+}
+
+
+#commentsubmit{
+    background-color: #0060A6;
+    border: thin solid #666666;
+    border-radius: 8px 8px 8px 8px;
+    color: #F8FAF9;
+    float: right;
+    font-weight: bold;
+    margin-bottom: 30px;
+    margin-top: 0;
+    padding: 5px 10px;
+}

@@ -1,7 +1,13 @@
 <?php
+session_start();
+/*if (isset($_SESSION["user_id"])) {
+    include "php/timeline.php";
+} else {
+    include "start.php";
+}*/
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
+//1.1
+
+ include "php/timeline.php";
 ?>
