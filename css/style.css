@@ -149,7 +149,15 @@ header nav#nav-main-leveltwo ul li a { color: #FFFFFF; }
 #main .wrapper { background-image: url("../images/design/backgroundMain.png"); background-position: 3px 0; background-repeat: repeat-y; }
 #main header { margin:0; padding:0; }
 /* hide notificationbox on default */
-#main #notificationbox { background-color: #60A917; color: #FFFFFF; display: none; font-size: 26px; padding: 10px 25px; width: 930px; }
+#main #notificationbox { 
+    background-color: #60A917;
+    color: #FFFFFF;
+    font-size: 20px;
+    padding: 10px 25px;
+    width: 930px;
+/*    visibility: hidden; */
+    display: none;
+}
 
 /* Content Columns */
 #header-column,
@@ -678,8 +686,10 @@ margin-top:0px;
  
   font-weight:bold;
 
-  margin-left: opx;
+  margin-left: 0px;
   padding:5px 10px;
   width: 250px;
   text-decoration: none;
 }
+
+

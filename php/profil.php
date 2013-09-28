@@ -21,6 +21,7 @@ include "php/image_functions.php";
         ?>
         <link rel="stylesheet" href="css/style.css" media="screen,projection">
         <script src="js/libs/modernizr-2.0.6.min.js"></script>
+        <script src="js/libs/general/generalClass.js"></script>
         <!-- jquery -->
         <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
         <!-- template functions -->
@@ -191,20 +192,27 @@ include "php/image_functions.php";
 
             //]]>
         </script>
-           <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function() {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-40911491-1', 'paperly.de');
-  ga('send', 'pageview');
+            ga('create', 'UA-40911491-1', 'paperly.de');
+            ga('send', 'pageview');
 
-</script>
+        </script>
 
     </head>
     <body id="profil">
-<?php /* set docuemnt header, check functions.php */ if (isset($_SESSION["user_id"])) echo getDocumentHeaderLoggedIn('profil', $_SESSION["user_id"], $pdoConnection); ?>
+        <?php /* set docuemnt header, check functions.php */ if (isset($_SESSION["user_id"])) echo getDocumentHeaderLoggedIn('profil', $_SESSION["user_id"], $pdoConnection); ?>
         <div id="container">
             <div id="header-designwrapper-left"></div>
             <div id="header-designwrapper-right"></div>
@@ -224,59 +232,60 @@ include "php/image_functions.php";
                     <div id="notificationbox">Bitte fülle folgendes Formular aus</div>
                     <div id="content-column">
                         <section>
-<?php
-$user_id = $_SESSION["user_id"];
+                            <?php
+                            $user_id = $_SESSION["user_id"];
 // Prüfen ob schon vorhanden
-if (!empty($_POST[Nickname])) {
-    
-      // Pruefen, ob Username schon in Datenbank vorhanden ist
-   $sql = "SELECT nickname FROM  `user`  WHERE nickname = '" . $_POST[Nickname]. "' AND NOT user_id = '$user_id'";
-    $result = mysql_query($sql);
-   $row = mysql_fetch_object($result);
-   $nickname = $row->nickname;
-   
-   //Username blacklist 
-  $blacklist= array();
-   $blacklist[] = "entdecken";
-   $blacklist[] = "schreiben";
-   $blacklist[] = "mypaperly";
-   $blacklist[] = "einstellungen";
-   $blacklist[] = "logout";
-   $blacklist[] = "start";
-   $blacklist[] = "abmelden";
-   $blacklist[] = "twitter";
-   $blacklist[] = "facebook";
-   $blacklist[] = "paperly"; 
-   $blacklist[] = "towns";
+                            if (!empty($_POST[Nickname])) {
 
-   
-   // Pruefen, ob sich Username erlaubt ist
+                                // Pruefen, ob Username schon in Datenbank vorhanden ist
+                                $sql = "SELECT nickname FROM  `user`  WHERE nickname = '" . $_POST[Nickname] . "' AND NOT user_id = '$user_id'";
+                                $result = mysql_query($sql);
+                                $row = mysql_fetch_object($result);
+                                $nickname = $row->nickname;
 
- 
-   
-  
-   if($nickname != $_POST[Nickname] && !in_array($_POST[Nickname],$blacklist))
-   {
-          
-    $sql = "UPDATE user SET nickname = '$_POST[Nickname]'  WHERE user_id = '$user_id';";
-    $result = mysql_query($sql);
-    echo "<div class='start_green'>Persönliche Daten wurden geändert  </div>";
-  
-   }
-   else{
-       
-       // notification box updaten
-        echo "<div class='start_green'>Nickname schon vorhanden</div>";
-   }
-       
-    
-    
- 
+                                //Username blacklist 
+                                $blacklist = array();
+                                $blacklist[] = "entdecken";
+                                $blacklist[] = "schreiben";
+                                $blacklist[] = "mypaperly";
+                                $blacklist[] = "einstellungen";
+                                $blacklist[] = "logout";
+                                $blacklist[] = "start";
+                                $blacklist[] = "abmelden";
+                                $blacklist[] = "twitter";
+                                $blacklist[] = "facebook";
+                                $blacklist[] = "paperly";
+                                $blacklist[] = "towns";
+
+
+                                // Pruefen, ob sich Username erlaubt ist
+
+
+
+
+                                if ($nickname != $_POST[Nickname] && !in_array($_POST[Nickname], $blacklist)) {
+
+                                    $sql = "UPDATE user SET nickname = '$_POST[Nickname]'  WHERE user_id = '$user_id';";
+                                    $result = mysql_query($sql);
+                                     ?>
+                                    <script>
+                                        showNotivicationBox("Die Änderungen wurden vorgenommen.");
+                                    </script>
+        <?php
+                                } else {
+
+                                    // notification box updaten
+// echo "<div class='start_green'>Nickname schon vorhanden</div>";
+                                    ?>
+                                    <script>
+                                        showNotivicationBoxRed("Der Spitzname ist nicht verfügbar");
+                                    </script>
+        <?php
+    }
 }
-if (!empty($_POST[Beschreibung]) ) {
-    $sql = "UPDATE user SET description = '".$_POST[Beschreibung]."' WHERE user_id = $user_id;";
-     $result = mysql_query($sql);
-
+if (!empty($_POST[Beschreibung])) {
+    $sql = "UPDATE user SET description = '" . $_POST[Beschreibung] . "' WHERE user_id = $user_id;";
+    $result = mysql_query($sql);
 }
 if (!empty($_POST[AktuellesPasswort]) && !empty($_POST[NeuesPasswort]) && !empty($_POST[Passwortwiederholen])) {
     if ($_POST[NeuesPasswort] == $_POST[Passwortwiederholen]) {
@@ -326,8 +335,8 @@ $forname = $row->forename;
 $email = $row->email;
 $description = $row->description;
 $name = $row->name;
- $picture = $row->picture;
- $picture = $row->picture;
+$picture = $row->picture;
+$picture = $row->picture;
 
 // get name of selected hometown
 $hometownName = '';
@@ -358,12 +367,12 @@ if ($hometown != '') {
                                             <label class="profil-label" for="profilNickname">Spitzname:</label>
                                             <input id="profilNickname" class="profil-field" type="text" required value="<?php echo $nickname; ?>" name="Nickname">
                                         </div>
-                                       
+
                                         <div class="profil-fieldwrap_long" >
                                             <label class="profil-label"  >Beschreibung:</label>
-                                       
+
                                             <textarea id="profil-textarea" maxlength="200" class="profil-field" name="Beschreibung" ><?php echo $description; ?></textarea> 
-                                            
+
                                         </div>
                                         <div class="profil-fieldwrap">
                                             <input class="profil-submit profil_css3button" type="submit" name="" value="Änderungen speichern" >
@@ -375,26 +384,26 @@ if ($hometown != '') {
 
                                 <!--<div id="upload_status" style="font-size:12px; width:80%; margin:10px; padding:5px; display:none; border:1px #999 dotted; background:#eee;"></div>!-->
                                 <div class="profil-fieldwrap" >
-                                           <div id="thumbnail_form" style="display:none;">
-                                    <form name="form" action="" method="post">
-                                        <input type="hidden" name="x1" value="" id="x1" />
-                                        <input type="hidden" name="y1" value="" id="y1" />
-                                        <input type="hidden" name="x2" value="" id="x2" />
-                                        <input type="hidden" name="y2" value="" id="y2" />
-                                        <input type="hidden" name="w" value="" id="w" />
-                                        <input type="hidden" name="h" value="" id="h" />
-                                        <input type="submit" class="profil-submit profil_css3button" name="save_thumb" value="Bild speichern" id="save_thumb" />
-                                    </form>
-                                </div>
+                                    <div id="thumbnail_form" style="display:none;">
+                                        <form name="form" action="" method="post">
+                                            <input type="hidden" name="x1" value="" id="x1" />
+                                            <input type="hidden" name="y1" value="" id="y1" />
+                                            <input type="hidden" name="x2" value="" id="x2" />
+                                            <input type="hidden" name="y2" value="" id="y2" />
+                                            <input type="hidden" name="w" value="" id="w" />
+                                            <input type="hidden" name="h" value="" id="h" />
+                                            <input type="submit" class="profil-submit profil_css3button" name="save_thumb" value="Bild speichern" id="save_thumb" />
+                                        </form>
+                                    </div>
                                     <p class="profil-submit profil_css3button" style="margin-top: 0px; margin-right: 10px; "><a id="upload_link" style="color: white;" href="#">Bild auswählen</a></p>
                                 </div><div class="profil-fieldwrap"><p>
-                             
+
                                     </p></div>
-                               
+
                                 <span id="loader" style="display:none;"><img src="loader.gif" alt="Loading..."/></span> <span id="progress"></span>
-                                
+
                                 <div id="uploaded_image"> <img id="profilbild" src="<?php echo $picture; ?>" height="250" width="250"/></div>
-                                
+
 
                             </article>
                             <article class="profil-right">
