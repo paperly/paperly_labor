@@ -236,7 +236,7 @@ if (!empty($_POST[Nickname])) {
    $nickname = $row->nickname;
    
    //Username blacklist 
-   $blacklist= array();
+  $blacklist= array();
    $blacklist[] = "entdecken";
    $blacklist[] = "schreiben";
    $blacklist[] = "mypaperly";
@@ -252,14 +252,15 @@ if (!empty($_POST[Nickname])) {
    
    // Pruefen, ob sich Username erlaubt ist
 
-   $test = array_search($nickname, $blacklist);
+ 
+   
   
-   if($nickname != $_POST[Nickname] && !array_search($nickname, $blacklist))
+   if($nickname != $_POST[Nickname] && !in_array($_POST[Nickname],$blacklist))
    {
           
     $sql = "UPDATE user SET nickname = '$_POST[Nickname]'  WHERE user_id = '$user_id';";
     $result = mysql_query($sql);
-    echo "<div class='start_green'>Persönliche Daten wurden geändert .$test. </div>";
+    echo "<div class='start_green'>Persönliche Daten wurden geändert  </div>";
   
    }
    else{
