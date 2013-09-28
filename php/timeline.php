@@ -101,16 +101,7 @@ $target = '/';
                 });
             });
         </script>
-                   <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-40911491-1', 'paperly.de');
-  ga('send', 'pageview');
-
-</script>
     </head>
     <?
     $art_id = $_GET["artid"];
@@ -161,7 +152,7 @@ $target = '/';
                               
                                 <h2>Ich möchte Nachrichten aus:</h2>
 
-                                <?
+                                <?php
                                 if (empty($_POST["selectedNavItemLocation"])) {
                                     $start_location = 1;
                                 } else {
@@ -205,11 +196,11 @@ $target = '/';
 </script> 
                                 <div class="location-box">
                                     <div id="location-box-search">
-                                        <input id="searchLocation" autofocus class="field" type="text" value="" placeholder="<? echo $location_name; ?>" name="Location">
-                                            <? if($start_location != 1){ 
+                                        <input id="searchLocation" autofocus class="field" type="text" value="" placeholder="<?php echo $location_name; ?>" name="Location">
+                                            <?php if($start_location != 1){ 
                                                 ?>
                                         <a href='javascript:follow_add_location(<?php echo $start_location; ?>);'><input  id="follow_button_location" type="submit" name="" value="<?php echo $followtext; ?>"/></a>
-                                            <? } ?>
+                                            <?php } ?>
                                     </div>
                                     <div id="locationFollow">
 
@@ -236,8 +227,8 @@ $target = '/';
                         <section>
                             <div id="submitFilter" style="display: none">
                                 <form name="formArtikelFilter" enctype="multipart/form-data" class="submitfilter_form" action="<? echo $target ?>" method="post">
-                                    <input id="inputSelectedNavItem" type="hidden" name="selectedNavItem" value="<? echo $_POST["selectedNavItem"] ?>">
-                                    <input id="inputSelectedNavItemLocation" type="hidden" name="selectedNavItemLocation" value="<? echo $_POST["selectedNavItemLocation"]; ?>">
+                                    <input id="inputSelectedNavItem" type="hidden" name="selectedNavItem" value="<?php echo $_POST["selectedNavItem"] ?>">
+                                    <input id="inputSelectedNavItemLocation" type="hidden" name="selectedNavItemLocation" value="<?php echo $_POST["selectedNavItemLocation"]; ?>">
                                     <!-- TODO: set add location filter -->
                                 </form>
                             </div>
@@ -250,7 +241,7 @@ $target = '/';
 
 
 
-<?
+<?php
 
 // TODO: get location filter
 // set default item if POST var is undefined
