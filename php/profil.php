@@ -269,7 +269,7 @@ include "php/image_functions.php";
                                     $result = mysql_query($sql);
                                      ?>
                                     <script>
-                                        showNotivicationBox("Die Änderungen wurden vorgenommen.");
+                                        showNotivicationBox("Dein Spitzname wurde geändert.");
                                     </script>
         <?php
                                 } else {
@@ -278,7 +278,7 @@ include "php/image_functions.php";
 // echo "<div class='start_green'>Nickname schon vorhanden</div>";
                                     ?>
                                     <script>
-                                        showNotivicationBoxRed("Der Spitzname ist nicht verfügbar");
+                                        showNotivicationBoxRed("Der Spitzname ist nicht verfügbar.");
                                     </script>
         <?php
     }
@@ -302,12 +302,24 @@ if (!empty($_POST[AktuellesPasswort]) && !empty($_POST[NeuesPasswort]) && !empty
             $newpw = md5($_POST[Passwortwiederholen]);
             $sql = "UPDATE user SET password = '$newpw'  WHERE user_id = '$user_id';";
             $result = mysql_query($sql);
-            echo "<div class='start_green'>Passwort wurde geändert</div>";
+              ?>
+                                    <script>
+                                        showNotivicationBox("Dein Passwort wurde geändert.");
+                                    </script>
+        <?php
         } else {
-            echo "<div class='start_red'>Passwort wurde nicht geändert nicht gleich</div>";
+                                              ?>
+                                    <script>
+                                        showNotivicationBoxRed("Das Passwort wurde nicht richtig wiederholt.");
+                                    </script>
+        <?php
         }
     } else {
-        echo "<div class='start_red'>Passwort wurde nicht geändert leer</div>";
+                                                      ?>
+                                    <script>
+                                        showNotivicationBoxRed("Das Passwort wurde nicht richtig wiederholt.");
+                                    </script>
+        <?php
     }
 }
 if (!empty($_POST[NeueEmail]) && !empty($_POST[Emailwiederholen])) {
@@ -318,12 +330,24 @@ if (!empty($_POST[NeueEmail]) && !empty($_POST[Emailwiederholen])) {
         if ($menge == 0) {
             $sql = "UPDATE user SET email = '$newmail'  WHERE user_id = '$user_id';";
             $result = mysql_query($sql);
-            echo "<div class='start_green'>Email Adresse wurde erfolgreich geändert</div>";
+                                                                ?>
+                                    <script>
+                                        showNotivicationBox("Deine Email-Adresse wurde geändert.");
+                                    </script>
+        <?php
         } else {
-            echo "<div class='start_red'>Email Adresse konnte nicht geändert werden.</div>";
+                                                                 ?>
+                                    <script>
+                                        showNotivicationBoxRed("Deine Email-Adresse konnte nicht geändert werden.");
+                                    </script>
+        <?php
         }
     } else {
-        echo "<div class='start_red'>Email Adresse konnte nicht geändert werden.</div>";
+                                                            ?>
+                                    <script>
+                                        showNotivicationBoxRed("Deine Email-Adresse konnte nicht geändert werden.");
+                                    </script>
+        <?php
     }
 }
 // Ende if Post
