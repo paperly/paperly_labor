@@ -1,4 +1,4 @@
- <?
+ <?php
         session_start();
 ?>
 
@@ -20,7 +20,7 @@
     </head>
     <body class="demos ">
 
-        <?
+        <?php
       
 
 
@@ -38,7 +38,7 @@
 
         <div id="timeline-articlelist" >
 
-            <?
+            <?php
             // TODO: get location filter
             $start_location = 1;
 

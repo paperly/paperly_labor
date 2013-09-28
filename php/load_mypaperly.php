@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 $user_id = $_SESSION["user_id"];
 ?>
@@ -33,7 +33,7 @@ $user_id = $_SESSION["user_id"];
 
 <div id="timeline-articlelist" >
 
-	<?
+	<?php
 		  
 		  // TODO: get location filter
 		  $start_location = 1;

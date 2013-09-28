@@ -1,4 +1,4 @@
-<?
+<?php
 
 // get db connection
 include "config.php";

@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 
 ?>
@@ -43,7 +43,7 @@ session_start();
                             
                      
                                         <div id="timeline-articlelist">
-                                           <?
+                                           <?php
                             // TODO: get location filter
                             // set default item if POST var is undefined
                             // TODO: get default theme, including nav selection
