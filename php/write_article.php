@@ -184,11 +184,8 @@ include "php/functions.php";
                         <section>
                             <?php
                             $userid = $_SESSION["user_id"]; // Später durch session!
-                            $check = false;
-                            if (isset($_POST["check"])) {
-                                $check = true;
-                            }
-                            if (!empty($_POST["tf_text"]) && !empty($_POST["tf_titel"]) && $check == true) {
+                        
+                            if (!empty($_POST["tf_text"]) && !empty($_POST["tf_titel"]) ) {
                                 $text = $_POST["tf_text"];
                                 // böse zeichen entfernen
                                   $text = str_replace("'", "`", $text);
@@ -355,7 +352,7 @@ include "php/functions.php";
 
                                     <div class="write_left_list">
                                         <div style="width:300px; float:left;">
-                                            <p><input type="checkbox" name="check" checked="checked" > Mit der Veröffentlichung akzeptiere ich die Nutzungsbedingungen und Datenschutzerklärung</p>
+                                            <p>Mit der Veröffentlichung akzeptiere ich die Nutzungsbedingungen und Datenschutzerklärung</p>
                                         </div>
                                         <div style="width:200px; float:right;">
                                             <button type="submit" name="speichern" value="speichern"  class="css3button">Artikel veröffentlichen</button>
