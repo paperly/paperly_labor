@@ -6,6 +6,7 @@ include "php/functions.php";
 include "php/functionsTimeline.php";
 $user_id = $_SESSION["user_id"];
 // global values
+// wisnversion 1.0 oli
 $target = '/';
 
 ?>
