@@ -21,7 +21,7 @@ include "functions.php";
         <script src="js/libs/theme/themeClass.js"></script>
         <script src="php/getThemes.php" type="text/javascript"></script>
     </head>
-    <?
+    <?php
     // format values: see themeClass.js, loadThemeElements(chosenthemes, formatstring, themeboxid, multiplethemeselection)
     $values = '';
     // get chosen themes
@@ -48,7 +48,7 @@ include "functions.php";
         $values = $values . ',null';
     }
     ?>
-    <body id="select-theme" onLoad="javascript:loadThemeElements(<? echo $values; ?>);">
+    <body id="select-theme" onLoad="javascript:loadThemeElements(<?php echo $values; ?>);">
         <div id="theme-selectbox"></div>
         <div id="theme-resultbox">
             <input id="theme-resultbox-input" type="hidden" name="selectedThemes" value="">

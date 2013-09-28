@@ -10,7 +10,7 @@ $user_id = $_SESSION["user_id"];
 ?>
 
 
-<?
+<?php
 if (!isset($_SESSION["user_id"])) {
     echo "Nicht eingeloggt";
 } else {
@@ -54,7 +54,7 @@ if (!isset($_SESSION["user_id"])) {
   
     <div id="content_box"><h1>Towns</h1></div>
 
-    <?
+    <?php
     $sql = "SELECT location.location_id as location_id,name FROM  location_follow,location WHERE location.location_id = location_follow.location_id AND location_follow.user_id_self = $user_id";
 
     $result = mysql_query($sql);
@@ -96,7 +96,7 @@ if (!isset($_SESSION["user_id"])) {
     <hr>
       <div id="content_box"> <h1>Menschen</h1></div>
    
-    <?
+    <?php
     $sql ="SELECT user.description, user.picture, user.user_id as user_id, user.nickname FROM  user_follow, user WHERE user_follow.user_id_other = user.user_id AND user_follow.user_id_self = $user_id";
 
     $result = mysql_query($sql);
@@ -126,7 +126,7 @@ if (!isset($_SESSION["user_id"])) {
     </section>
     </body>
     
-    <?
+    <?php
 }
 ?>
 

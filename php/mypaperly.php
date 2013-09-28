@@ -52,7 +52,7 @@ $user_id = $_SESSION["user_id"];
 
 </script>
     </head>
-    <? $art_id = $_GET["artid"]; ?>
+    <?php $art_id = $_GET["artid"]; ?>
     <body id="timeline" onLoad="">
         <?php
         // set docuemnt header, check functions.php
@@ -105,7 +105,7 @@ $user_id = $_SESSION["user_id"];
                                 </article>
 
                                 
-                                <?
+                                <?php
                                 // TODO: get location filter
                                 // set default item if POST var is undefined
                                 // TODO: get default theme, including nav selection
