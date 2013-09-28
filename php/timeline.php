@@ -196,8 +196,14 @@ $target = '/';
 </script> 
                                 <div class="location-box">
                                     <div id="location-box-search">
+<<<<<<< HEAD
                                         <input id="searchLocation" autofocus class="field" type="text" value="" placeholder="<?php echo $location_name; ?>" name="Location">
                                             <?php if($start_location != 1){ 
+=======
+                                        <input id="searchLocation" autofocus class="field" type="text" value="" placeholder="<? echo $location_name; ?>" name="Location">
+                                            <? if($start_location != 1 && !empty($user_id)){ 
+                                                
+>>>>>>> e2a38c22d5cf012522fd9a2c6dd52bd96725c330
                                                 ?>
                                         <a href='javascript:follow_add_location(<?php echo $start_location; ?>);'><input  id="follow_button_location" type="submit" name="" value="<?php echo $followtext; ?>"/></a>
                                             <?php } ?>
