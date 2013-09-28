@@ -67,7 +67,7 @@ $target = '/';
                         // set properties
                         var linkContainer = 'location-box-result-links';
                         var infoContainer = 'location-box-result-info';
-                        var infoContainerText = 'Weitere Gemeinden einfach per Suchfunktion wählen';
+                        var infoContainerText = 'Weitere Gemeinden einfach per Suchfunktion w√§hlen';
                         var inputValues = 'inputSelectedNavItemLocation';
                         var valueSeparator = ';';
                         setLocationProperties(linkContainer, infoContainer, infoContainerText, inputValues, valueSeparator);
@@ -176,7 +176,7 @@ $target = '/';
                                 }
                                 
                                  if($start_location == 1){
-                                    $location_name = "Wähle Deine Stadt";
+                                    $location_name = "W√§hle Deine Stadt";
                                 }
                                 ?>
   <script type = 'text/javascript'>
@@ -196,14 +196,20 @@ $target = '/';
 </script> 
                                 <div class="location-box">
                                     <div id="location-box-search">
-<<<<<<< HEAD
+
                                         <input id="searchLocation" autofocus class="field" type="text" value="" placeholder="<?php echo $location_name; ?>" name="Location">
                                             <?php if($start_location != 1){ 
-=======
-                                        <input id="searchLocation" autofocus class="field" type="text" value="" placeholder="<? echo $location_name; ?>" name="Location">
-                                            <? if($start_location != 1 && !empty($user_id)){ 
+
                                                 
->>>>>>> e2a38c22d5cf012522fd9a2c6dd52bd96725c330
+                                                
+                                                
+                                            }
+                                            
+                                            ?>
+                                        <input id="searchLocation" autofocus class="field" type="text" value="" placeholder="<? echo $location_name; ?>" name="Location">
+                                            <?php if($start_location != 1 && !empty($user_id)){ 
+                                                
+
                                                 ?>
                                         <a href='javascript:follow_add_location(<?php echo $start_location; ?>);'><input  id="follow_button_location" type="submit" name="" value="<?php echo $followtext; ?>"/></a>
                                             <?php } ?>
@@ -225,7 +231,7 @@ $target = '/';
             </header>
             <div id="main" role="main" class="clearfix">
                 <div class="wrapper clearfix">
-                    <div id="notificationbox">Bitte fülle folgendes Formular aus</div>
+                    <div id="notificationbox">Bitte f√ºlle folgendes Formular aus</div>
                     <div id="content-column">
                         
                         
@@ -254,14 +260,14 @@ $target = '/';
 // TODO: get default theme, including nav selection
 //$start_theme = 1;
 // display nulled filter
-//if($count == 0) echo '<div class="timeline-article-status"><p>BITTE WÄHLEN SIE EINE KATEGORIE</p></div>';
+//if($count == 0) echo '<div class="timeline-article-status"><p>BITTE W√ÑHLEN SIE EINE KATEGORIE</p></div>';
 //$start_location = 1;
 // set filter item
 $start_theme = 0;
 $_SESSION['start_location'] = $start_location;
 
 // get query
-// prüfen ob location deutschland ist -> performance
+// pr√ºfen ob location deutschland ist -> performance
 if ($start_location == 1) {
     $sql1 = "SELECT  article.topic, article.article_id AS article_id,article.creator, DATE_FORMAT(article.timestamp_creation, '%d.%m.%Y %H:%i') AS 'date', article.article_text, article.image, article.source, article.timestamp_event 
                                         FROM article
@@ -350,7 +356,7 @@ while ($row = mysql_fetch_object($result44)) {
           </div>';
           echo $adv;
          */
-              // echo load_article_html("hier könnte ihre werbung stehen",$row->article_text,$row->article_id,$row->source,$row->creator,$row->image,$row->date);
+              // echo load_article_html("hier k√∂nnte ihre werbung stehen",$row->article_text,$row->article_id,$row->source,$row->creator,$row->image,$row->date);
 
         echo get_socialad();
         $count = 0;
