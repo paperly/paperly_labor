@@ -112,7 +112,7 @@ $target = '/';
 
 </script>
     </head>
-    <?
+    <?php
     $art_id = $_GET["artid"];
     if (!empty($art_id)) {
         echo "<a class='fancybox2 fancybox.iframe' href='article.php?artid=" . $art_id . "' target='_new' ></a>";
