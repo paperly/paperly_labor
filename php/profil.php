@@ -259,8 +259,8 @@ if (!empty($_POST[Nickname])) {
           
     $sql = "UPDATE user SET nickname = '$_POST[Nickname]'  WHERE user_id = '$user_id';";
     $result = mysql_query($sql);
-    echo "<div class='start_green'>Persönliche Daten wurden geändert</div>";
-    echo $test;
+    echo "<div class='start_green'>Persönliche Daten wurden geändert .$test. </div>";
+  
    }
    else{
        
