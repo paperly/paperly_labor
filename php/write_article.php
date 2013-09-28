@@ -339,7 +339,7 @@ include "php/functions.php";
                                         </div>                                        
                                     </div>
                                        <div class="write_left_list">
-                                        <h7>Artikelbild:</h7> 
+                                        <h7>Bild (jpg):</h7> 
                                         <input type="file" name="datei" class="write" required>
                                     </div>
                                     <div class="write_left_list_textarea" style="">

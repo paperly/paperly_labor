@@ -10,6 +10,13 @@ mysql_select_db("paperly_01_c") or die("Datenbank konnte nicht ausgewählt werde
 // Wie viel Artikel werden geladen?
 $varLoadLimit = 12;
 
+
+//paperly base url
+$basedir = "localhost";
+
+
+
+
 // set PDO connection parameter
 $pdoHost = 'mysql:host=localhost;dbname=paperly_01';
 $pdoUsername = 'paperly_01';

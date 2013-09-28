@@ -92,7 +92,7 @@ $articleLinkLength = 18;
                     fitToView: false,
                     autoSize: false,
                     beforeClose: function() {
-                        parent.history.pushState(null, 'paperly Artikel', 'http://www.paperly.de/entdecken');
+                        parent.history.pushState(null, 'paperly Artikel', 'http://<?php echo $basedir; ?>/entdecken');
                     }
                 });
             });
@@ -107,7 +107,7 @@ $articleLinkLength = 18;
                     fitToView: false,
                     autoSize: false,
                     beforeClose: function() {
-                        parent.history.pushState(null, 'paperly Artikel', 'http://www.paperly.de/entdecken');
+                        parent.history.pushState(null, 'paperly Artikel', 'http://<?php echo $basedir; ?>/entdecken');
                     }
                 });
             });

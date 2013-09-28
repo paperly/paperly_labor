@@ -983,7 +983,10 @@ function load_promotioncalcalation($months, $locations) {
     }
 
     function getHeaderConfig($headerid) {
-        $html = formatHTMLLineBreak('<base href="http://localhost">', 0);
+    
+         
+            $basedir = "localhost";
+        $html .= formatHTMLLineBreak('<base href="http://'.$basedir.'">', 0);
    $html .= formatHTMLLineBreak('<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon; charset=binary">');
       $html .= formatHTMLLineBreak('<link rel="icon" href="images/favicon.ico" type="image/x-icon; charset=binary">');
 //    $html .= formatHTMLLineBreak('<title>' . $headerid . ': paperly</title>');

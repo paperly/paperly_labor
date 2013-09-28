@@ -253,7 +253,7 @@ $user_id = $_SESSION["user_id"];
                     fitToView: false,
                     autoSize: false,
                     beforeClose: function() {
-                        parent.history.pushState(null, 'paperly Artikel', 'http://www.paperly.de/mypaperly');
+                        parent.history.pushState(null, 'paperly Artikel', 'http://<?php echo $basedir; ?>/mypaperly');
                     }
                 });
             });

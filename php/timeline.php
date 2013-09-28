@@ -97,7 +97,7 @@ $target = '/';
                     fitToView: false,
                     autoSize: false,
                     beforeClose: function() {
-                        parent.history.pushState(null, 'paperly Artikel', 'http://localhost');
+                        parent.history.pushState(null, 'paperly Artikel', 'http://<?php echo $basedir; ?>');
                     }
                 });
             });
@@ -191,7 +191,7 @@ $target = '/';
                                 ?>
   <script type = 'text/javascript'>
 
-    history.pushState(null, 'paperly Artikel', '<?php echo "http://localhost/town/".$start_location."";?>');
+    history.pushState(null, 'paperly Artikel', '<?php echo "http://".$basedir."/town/".$start_location."";?>');
  $('.fancybox').fancybox({
                     'padding': 0,
                     'margin': 0,
@@ -200,7 +200,7 @@ $target = '/';
                     fitToView: false,
                     autoSize: false,
                     beforeClose: function() {
-                        parent.history.pushState(null, 'paperly Artikel', '<?php echo "http://localhost/town/".$start_location."";?>');
+                        parent.history.pushState(null, 'paperly Artikel', '<?php echo "http://".$basedir."/town/".$start_location."";?>');
                     }
                 });
 </script> 
