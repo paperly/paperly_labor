@@ -96,7 +96,7 @@ $target = '/';
                     fitToView: false,
                     autoSize: false,
                     beforeClose: function() {
-                        parent.history.pushState(null, 'paperly Artikel', 'http://www.paperly.de');
+                        parent.history.pushState(null, 'paperly Artikel', 'http://localhost');
                     }
                 });
             });
@@ -190,7 +190,7 @@ $target = '/';
                                 ?>
   <script type = 'text/javascript'>
 
-    history.pushState(null, 'paperly Artikel', '<?php echo "http://www.paperly.de/town/".$start_location."";?>');
+    history.pushState(null, 'paperly Artikel', '<?php echo "http://localhost/town/".$start_location."";?>');
  $('.fancybox').fancybox({
                     'padding': 0,
                     'margin': 0,
@@ -199,7 +199,7 @@ $target = '/';
                     fitToView: false,
                     autoSize: false,
                     beforeClose: function() {
-                        parent.history.pushState(null, 'paperly Artikel', '<?php echo "http://www.paperly.de/town/".$start_location."";?>');
+                        parent.history.pushState(null, 'paperly Artikel', '<?php echo "http://localhost/town/".$start_location."";?>');
                     }
                 });
 </script> 
