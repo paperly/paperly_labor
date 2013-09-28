@@ -229,13 +229,31 @@ $user_id = $_SESSION["user_id"];
 // Prüfen ob schon vorhanden
 if (!empty($_POST[Nickname])) {
     
-      
+      // Pruefen, ob Username schon in Datenbank vorhanden ist
    $sql = "SELECT nickname FROM  `user`  WHERE nickname = '" . $_POST[Nickname]. "' AND NOT user_id = '$user_id'";
     $result = mysql_query($sql);
    $row = mysql_fetch_object($result);
    $nickname = $row->nickname;
    
-   if($nickname != $_POST[Nickname])
+   //Username blacklist 
+   $blacklist= array();
+   $blacklist[] = "entdecken";
+   $blacklist[] = "schreiben";
+   $blacklist[] = "mypaperly";
+   $blacklist[] = "einstellungen";
+   $blacklist[] = "logout";
+   $blacklist[] = "start";
+   $blacklist[] = "abmelden";
+   $blacklist[] = "twitter";
+   $blacklist[] = "facebook";
+   $blacklist[] = "paperly"; 
+   $blacklist[] = "towns";
+
+   
+   // Pruefen, ob sich Username erlaubt ist
+
+   
+   if($nickname != $_POST[Nickname] && !array_search($nickname, $blacklist))
    {
           
     $sql = "UPDATE user SET nickname = '$_POST[Nickname]'  WHERE user_id = '$user_id';";
@@ -243,6 +261,8 @@ if (!empty($_POST[Nickname])) {
     echo "<div class='start_green'>Persönliche Daten wurden geändert</div>";
    }
    else{
+       
+       // notification box updaten
         echo "<div class='start_green'>Nickname schon vorhanden</div>";
    }
        
