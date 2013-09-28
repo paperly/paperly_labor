@@ -123,13 +123,13 @@ $articleLinkLength = 18;
 
 </script>
     </head>
-    <?
+    <?php
     $art_id = $_GET["artid"];
     if (!empty($art_id)) {
         echo "<a class='fancybox2 fancybox.iframe' href='article.php?artid=" . $art_id . "' target='_new' ></a>";
     }
     ?>
-    <body id="timeline" onLoad="<?
+    <body id="timeline" onLoad="<?php
     if (!empty($art_id)) {
         echo "javascript: $('.fancybox2').trigger('click');";
     }
@@ -152,7 +152,7 @@ $articleLinkLength = 18;
                               
                                 <h2>Entdecke paperly:</h2>
 
-                                <?
+                                <?php
                                 if (empty($_POST["searchkeyword"])) {
                                     $searchkeyword = "Keyword hier eintragen";
                                 } else {
@@ -171,7 +171,7 @@ $articleLinkLength = 18;
   
                                 <div class="location-box">
                                     <div id="location-box-search">
-                                        <form action="<? echo $target ?>"method="post">
+                                        <form action="<?php echo $target ?>"method="post">
                                         
                                         <input id="searchLocation" class="field" type="text" value="" autofocus placeholder="<?php echo $searchkeyword; ?>" name="searchkeyword">
                                            <input id="submit" class="follow_button_location" type="submit" name="" value="Suchen"/>
@@ -197,9 +197,9 @@ $articleLinkLength = 18;
                     <div id="content-column">
                         <section>
                             <div id="submitFilter" style="display: none">
-                                <form name="formArtikelFilter" enctype="multipart/form-data" class="submitfilter_form" action="<? echo $target ?>" method="post">
+                                <form name="formArtikelFilter" enctype="multipart/form-data" class="submitfilter_form" action="<?php echo $target ?>" method="post">
                                    
-                                    <input id="selectedKeyword" type="hidden" name="selectedKeyword" value="<? echo $_POST["selectedNavItemLocation"]; ?>">
+                                    <input id="selectedKeyword" type="hidden" name="selectedKeyword" value="<?php echo $_POST["selectedNavItemLocation"]; ?>">
                                     
                                     <!-- TODO: set add location filter -->
                                 </form>
@@ -208,7 +208,7 @@ $articleLinkLength = 18;
 
                             <div id="timeline-articlelist">
 
-<? echo get_socialad();?>
+<?php echo get_socialad();?>
 
                                 </article>
                                 <article class="timeline-article">
@@ -227,7 +227,7 @@ $articleLinkLength = 18;
 
 
 
-<?
+<?php
 
 // TODO: get location filter
 // set default item if POST var is undefined

@@ -31,7 +31,7 @@ $user_id = $_SESSION["user_id"];
         <script src="js/libs/timeline/timelineClass.js"></script>
         <script src="php/getTimelineNavigation.php" type="text/javascript"></script>
     </head>
-    <? $art_id = $_GET["artid"]; ?>
+    <?php $art_id = $_GET["artid"]; ?>
     <body id="timeline" onLoad="">
         <?php
         // set docuemnt header, check functions.php
@@ -64,12 +64,12 @@ $user_id = $_SESSION["user_id"];
                             
                             <a href="filter.php"><h1>Mein Social-Stream</h1></a>
                             <div id="submitFilter" style="display: none">
-                                <form name="formArtikelFilter" enctype="multipart/form-data" class="submitfilter_form" action="<? echo $target ?>" method="post">
+                                <form name="formArtikelFilter" enctype="multipart/form-data" class="submitfilter_form" action="<?php echo $target ?>" method="post">
                                     <input id="inputSelectedNavItem" type="hidden" name="selectedNavItem" value="">
                                     <!-- TODO: set add location filter -->
                                 </form>
                             </div>
-                            <div id="timeline-articlelist"><?
+                            <div id="timeline-articlelist"><?php
                                 // TODO: get location filter
                                 // set default item if POST var is undefined
                                 // TODO: get default theme, including nav selection

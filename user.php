@@ -231,7 +231,7 @@ $user_id =  $_SESSION["user_id"];
                             
                      
                                         <div id="timeline-articlelist">
-                                           <?
+                                           <?php
                             // TODO: get location filter
                             // set default item if POST var is undefined
                             // TODO: get default theme, including nav selection

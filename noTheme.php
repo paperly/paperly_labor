@@ -44,7 +44,7 @@ document.getElementById(id).style.visibility = "visible";
 }
 </script>
 </head>
-<?
+<?php
   // get db connection
   include "php/config.php";
   include "php/functions.php";
@@ -100,7 +100,7 @@ document.getElementById(id).style.visibility = "visible";
       <div id="content-column">
         <section>
          
-          <div id="timeline-articlelist"><?
+          <div id="timeline-articlelist"><?php
 		  
 		  // TODO: get location filter
 		  $start_location = 1;

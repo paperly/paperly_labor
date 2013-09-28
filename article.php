@@ -155,7 +155,7 @@ if ($creator == -1) {
                 
                 
                 ?>
-<? /* <p><div class="fb-like" data-href="http://www.paperly.de/prebeta/?artid=<?php echo $art_id; ?>" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div> </p> */ ?>
+<?php /* <p><div class="fb-like" data-href="http://www.paperly.de/prebeta/?artid=<?php echo $art_id; ?>" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div> </p> */ ?>
 
                 <div class="likebox" id="likebox_<?php echo $art_id; ?>"><?php echo $like; ?></div>
                 <div class="article-post-time">
