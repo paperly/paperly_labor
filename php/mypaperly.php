@@ -10,7 +10,6 @@ $articleTextLength = 160;
 $articleLinkLength = 18;
 // set current paper id
 $user_id = $_SESSION["user_id"];
-
 ?>
 <!doctype html>
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
@@ -41,18 +40,25 @@ $user_id = $_SESSION["user_id"];
         <link rel="stylesheet" type="text/css" href="js/libs/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
         <script type="text/javascript" src="js/libs/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
         <script type="text/javascript" src="js/libs/fancybox/helpers/jquery.fancybox-media.js?v=1.0.5"></script>
-                    <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function() {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-40911491-1', 'paperly.de');
-  ga('send', 'pageview');
+            ga('create', 'UA-40911491-1', 'paperly.de');
+            ga('send', 'pageview');
 
-</script>
+        </script>
     </head>
-    <?php $art_id = $_GET["artid"]; ?>
+        <?php $art_id = $_GET["artid"]; ?>
     <body id="timeline" onLoad="">
         <?php
         // set docuemnt header, check functions.php
@@ -81,40 +87,28 @@ $user_id = $_SESSION["user_id"];
                 <div class="wrapper clearfix">
                     <div id="notificationbox">Bitte fülle folgendes Formular aus</div>
                     <div id="content-column">
-                       <section> <div id="mypaperly_edit"> <a class="fancybox fancybox.iframe" href="php/mypaperly_following.php" target="_new"><input id="mypaperly_edit_button" type="submit" name="" value="mypaperly bearbeiten"/></a>
-                           
+                        <section> <div id="mypaperly_edit"> <a class="fancybox fancybox.iframe" href="php/mypaperly_following.php" target="_new"><input id="mypaperly_edit_button" type="submit" name="" value="mypaperly bearbeiten"/></a>
+
                             </div>
-                           
-                       </section>
+
+                        </section>
                         <section>
-                            
-                           
+
+
                             <h1></h1>
                             <div id="timeline-articlelist">
-                                  <article class="timeline-article">
-                                    <script type="text/javascript"><!--
-                                    google_ad_client = "ca-pub-7791364251025556";
-                                        /* Timeline 250 */
-                                        google_ad_slot = "4680684621";
-                                        google_ad_width = 250;
-                                        google_ad_height = 250;
-                                    //-->
-                                    </script>
-                                    <script type="text/javascript"   src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-                                    </script>
-                                </article>
+                      
 
-                                
                                 <?php
                                 // TODO: get location filter
                                 // set default item if POST var is undefined
                                 // TODO: get default theme, including nav selection
                                 // get query
-                              //  $sql1 = "SELECT article_text, article.topic, article.article_id AS article_id, DATE_FORMAT(article.timestamp_creation, '%d.%m.%Y %H:%i') AS 'date', article.article_text, article.image, article.source, article.timestamp_creation,creator  FROM article WHERE activation = 1 AND creator In (SELECT user_id_other FROM user_follow WHERE user_id_self = $user_id) OR  article_id in In (SELECT user_id_other FROM user_follow WHERE user_id_self = $user_id)";
+                                //  $sql1 = "SELECT article_text, article.topic, article.article_id AS article_id, DATE_FORMAT(article.timestamp_creation, '%d.%m.%Y %H:%i') AS 'date', article.article_text, article.image, article.source, article.timestamp_creation,creator  FROM article WHERE activation = 1 AND creator In (SELECT user_id_other FROM user_follow WHERE user_id_self = $user_id) OR  article_id in In (SELECT user_id_other FROM user_follow WHERE user_id_self = $user_id)";
 
-                                    $sql1 = "SELECT article_text, article.topic, article.article_id AS article_id, DATE_FORMAT(article.timestamp_creation, '%d.%m.%Y %H:%i') AS 'date', article.article_text, article.image, article.source, article.timestamp_creation,creator  FROM article WHERE activation = 1 AND creator In (SELECT user_id_other FROM user_follow WHERE user_id_self = $user_id) OR article_id IN (SELECT article FROM article_locations_belongs_to WHERE location IN (SELECT location_id FROM location_follow WHERE user_id_self = $user_id))";
-                                
-                                
+                                $sql1 = "SELECT article_text, article.topic, article.article_id AS article_id, DATE_FORMAT(article.timestamp_creation, '%d.%m.%Y %H:%i') AS 'date', article.article_text, article.image, article.source, article.timestamp_creation,creator  FROM article WHERE activation = 1 AND creator In (SELECT user_id_other FROM user_follow WHERE user_id_self = $user_id) OR article_id IN (SELECT article FROM article_locations_belongs_to WHERE location IN (SELECT location_id FROM location_follow WHERE user_id_self = $user_id))";
+
+
                                 //$i = 1;
                                 /* while($i < count($artikel_array)) {
                                   $art_id = $artikel_array[$i];
@@ -148,18 +142,13 @@ $user_id = $_SESSION["user_id"];
                                 // format result
                                 while ($row = mysql_fetch_object($result44)) {
 
-                                        echo load_article_html($row->topic,$row->article_text,$row->article_id,$row->source,$row->creator,$row->image,$row->date);
+                                    echo load_article_html($row->topic, $row->article_text, $row->article_id, $row->source, $row->creator, $row->image, $row->date);
 
 
-                                    //ads
-                                    if ($count == 4) {
-                                        /*
-                                          $adv = '<div class="post" style="height:300px;">
-                                          <p  align="justify"  style="padding:10px;">WERBUNG </p>
-                                          <p><img src="bayern.jpg"/ height="200px" > </p>
-                                          </div>';
-                                          echo $adv;
-                                         */
+                                    //beginn social ads
+                                    if ($count == 5) {
+
+                                        echo get_socialad();
                                         $count = 0;
                                     }
                                     $count++;
@@ -170,21 +159,10 @@ $user_id = $_SESSION["user_id"];
                                 if ($count == 0)
                                     echo '<div class="timeline-article-status"><p>KEINE ARTIKEL VORHANDEN</p></div>';
                                 ?>
-                            
-                            <article class="timeline-article">
-                                    <script type="text/javascript"><!--
-                                    google_ad_client = "ca-pub-7791364251025556";
-                                        /* Timeline 250 */
-                                        google_ad_slot = "4680684621";
-                                        google_ad_width = 250;
-                                        google_ad_height = 250;
-                                    //-->
-                                    </script>
-                                    <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-                                    </script>
-                                </article>
 
-                            
+                          
+
+
                             </div>
 
                             <!-- TODO: GET vars including lastArticelID -->
@@ -223,7 +201,7 @@ $user_id = $_SESSION["user_id"];
                     navSelector: '#page-nav', // selector for the paged navigation 
                     nextSelector: '#page-nav a', // selector for the NEXT link (to page 2)
                     itemSelector: '.timeline-article' // selector for all items you'll retrieve
-             
+
                 },
                 // trigger Masonry as a callback
                 function(newElements) {
@@ -266,7 +244,7 @@ $user_id = $_SESSION["user_id"];
         <footer class="no-print">
             <div class="wrapper clearfix">
                 <div id="footer-column">
-                    <?php echo getDocumentFooter(); ?>
+<?php echo getDocumentFooter(); ?>
                 </div>
             </div>
         </footer>
