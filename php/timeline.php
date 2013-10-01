@@ -329,31 +329,14 @@ while ($row = mysql_fetch_object($result44)) {
   
        echo load_article_html($row->topic,$row->article_text,$row->article_id,$row->source,$row->creator,$row->image,$row->date);
 
-    
-    //ads
-    if ($count == 3) {
-
-        echo get_socialad();
-        
-    //    $count = 0;
-    }
-    $count++;
-    //end ads
-     //ads
-    if ($count == 6) {
-        /*
-          $adv = '<div class="post" style="height:300px;">
-          <p  align="justify"  style="padding:10px;">WERBUNG </p>
-          <p><img src="bayern.jpg"/ height="200px" > </p>
-          </div>';
-          echo $adv;
-         */
-              // echo load_article_html("hier könnte ihre werbung stehen",$row->article_text,$row->article_id,$row->source,$row->creator,$row->image,$row->date);
-
+   
+     //beginn social ads
+    if ($count == 5) {
+       
         echo get_socialad();
         $count = 0;
     }
-    //$count++;
+    $count++;
     //end ads
 }
 // display nulled article list
