@@ -260,22 +260,33 @@ function load_promotioncalcalation($months, $locations) {
 
     function get_socialad() {
         $ads_array = array();
-         $ads_array[] = '<article class="timeline-article">
+        
+        
+      if (isset($_SESSION["user_id"])) {
+   $ads_array[] = '<article class="timeline-article">
           <div id="socialad">
           <h1>Werde paperly!</h1>
           <p>Das Artikel schreiben hilft dir um alles in der richtigen ordnung Pflumen mit Äpfeln zu werden.</p>
        <button id="socialadsbutton" onclick="location.href='."'schreiben'".'">Artikel Schreiben</button>
           </div>
           </article>';
-      
-           $ads_array[] = '<article class="timeline-article">
+} 
+        else
+        {
+               $ads_array[] = '<article class="timeline-article">
           <div id="socialad">
-          <h1>Ändere deinen namen</h1>
+          <h1>Registriere Doch!/h1>
           <p>Hallo Waldtanne34 wir haben bei der registragtion...</p>
-       <button id="socialadsbutton" onclick="location.href='."'profil'".'">Artikel Schreiben</button>
+       <button id="socialadsbutton" onclick="location.href='."'start'".'">Jetzt Resigistrieren</button>
           </div>
           </article>';
          
+            
+        }
+        
+         
+      
+        
          
 
 

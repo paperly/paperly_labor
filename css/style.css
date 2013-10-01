@@ -662,7 +662,7 @@ margin-top:0px;
 
 }
 #socialad h1{
-    background-color: #8F9190;
+    background-color: #333;
     color: #fff;
 
     font-size:18px;
@@ -677,7 +677,7 @@ margin-top:0px;
      text-align: center;
 }
 #socialadsbutton{
-  background-color: #8F9190;
+  background-color: #333;
   border:thin solid #666666;
   border-bottom-left-radius:8px;
   border-bottom-right-radius:8px;
