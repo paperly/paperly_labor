@@ -188,7 +188,7 @@ https://www.facebook.com/paperlyde</p>
 
                                     <form  enctype="multipart/form-data" action="login.php" method="post">
 
-                                        <input id="loginEMail" class="login-field" type="email" placeholder="Email-Adresse" style=" width:200px; height: 23px;" name="EMail" value="" required="" >
+                                        <input id="loginEMail" class="login-field" type="email" placeholder="E-Mail Adresse" style=" width:200px; height: 23px;" name="EMail" value="" required="" >
                                         <input id="loginPassword" class="login-field" type="password" placeholder="Passwort" style="width:200px; height: 23px;" name="Password" value="" required="">
                                         <input id="button_allgemein" type="submit" name="" value="Login"/>
 
@@ -280,7 +280,7 @@ https://www.facebook.com/paperlyde</p>
                                                 <input id="loginPassword" class="login-field" type="password" required value="" name="Password">
                                             </div>
                                             <div class="login-fieldwrap">
-                                                <input id="loginCheckBoxAGB" class="login-checkbox" type="checkbox" value="" name="AGB">
+                                                <input id="loginCheckBoxAGB" class="login-checkbox" type="checkbox" checked="checked" value="" name="AGB">
                                                 <label for="loginCheckBoxAGB">Mit der Registrierung gelten unsere <a href="agb.php" target="_new">Nutzungsbedingungen</a> und <a href="datenschutzbestimmungen.php" target="_new">Datenschutzbestimmungen</a></label>
                                             </div>
                                             <div class="login-fieldwrap">
