@@ -314,14 +314,14 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script></br>
                                     </article>';
     
-   echo' <article class="timeline-article">
+ /*  echo' <article class="timeline-article">
                     <div id="socialad">
                     <h1>Jetzt einen Artikel schreiben</h1>
                     <p>Werde paperly und schreibe einen Artikel</p>
                     <a href="/schreiben"><input  class="follow_button_location" type="submit" name="" value="Artikel schreiben"/></a>
                     </div>
                     </article>';
-    
+    */
     
 }
 ?>
