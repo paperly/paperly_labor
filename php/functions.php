@@ -275,7 +275,7 @@ function load_promotioncalcalation($months, $locations) {
         {
                $ads_array[] = '<article class="timeline-article">
           <div id="socialad">
-          <h1>Registriere Doch!/h1>
+          <h1>Registriere Doch!</h1>
           <p>Hallo Waldtanne34 wir haben bei der registragtion...</p>
        <button id="socialadsbutton" onclick="location.href='."'start'".'">Jetzt Resigistrieren</button>
           </div>
