@@ -157,19 +157,14 @@
                  echo load_article_html($row->topic,$row->article_text,$row->article_id,$row->source,$row->creator,$row->image,$row->date);
 
 
-                    //ads
-                    if ($count == 4) {
-                        /*
-                          $adv = '<div class="post" style="height:300px;">
-                          <p  align="justify"  style="padding:10px;">WERBUNG </p>
-                          <p><img src="bayern.jpg"/ height="200px" > </p>
-                          </div>';
-                          echo $adv;
-                         */
-                        $count = 0;
-                    }
-                    $count++;
-                    //end ads
+                   //beginn social ads
+    if ($count == 5) {
+       
+        echo get_socialad();
+        $count = 0;
+    }
+    $count++;
+    //end ads
                 }
 
 
