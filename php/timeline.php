@@ -363,31 +363,7 @@ while ($row = mysql_fetch_object($result44)) {
     //end ads
 }
 // display nulled article list
-if ($count == 0){
-    echo '<article class="timeline-article">
-<script type="text/javascript"><!--
-google_ad_client = "ca-pub-7791364251025556";
-/* Timeline 250 */
-google_ad_slot = "4680684621";
-google_ad_width = 250;
-google_ad_height = 250;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script></br>Der Ort'.$location_name.' hat noch keine Artikel. <a href="#">schreibe hier einen Artikel</a>
-                                    </article>';
-    
-   echo' <article class="timeline-article">
-                    <div id="socialad">
-                    <h1>Jetzt einen Artikel schreiben</h1>
-                    <p>Werde paperly und schreibe einen Artikel</p>
-                    <a href="write_aricle.php"><input  class="follow_button_location" type="submit" name="" value="Artikel schreiben"/></a>
-                    </div>
-                    </article>';
-    
-    
-}
+
 ?>
 
 

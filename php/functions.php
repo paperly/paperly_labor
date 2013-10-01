@@ -260,21 +260,21 @@ function load_promotioncalcalation($months, $locations) {
 
     function get_socialad() {
         $ads_array = array();
-         /*$ads_array[] = '<article class="timeline-article">
+         $ads_array[] = '<article class="timeline-article">
           <div id="socialad">
           <h1>Werde paperly!</h1>
           <p>Das Artikel schreiben hilft dir um alles in der richtigen ordnung Pflumen mit Äpfeln zu werden.</p>
-          <a id="socialadsbutton" href="schreiben">Artikel Schreiben</a>
+       <button id="socialadsbutton" onclick="location.href='."'schreiben'".'">Artikel Schreiben</button>
           </div>
           </article>';
-          $ads_array[] = '<article class="timeline-article">
+      
+           $ads_array[] = '<article class="timeline-article">
           <div id="socialad">
-          <h1>Leistungsschutzecht</h1>
-          <p>IGEL wurde in erster Linie aufgrund der Erkenntnis initiiert, dass es für ein Leistungsschutzrecht für Presseverleger weder eine Notwendigkeit noch eine Rechtfertigung gibt. Ein solches Recht wird einerseits nicht benötigt und hat andererseits – unabhängig von dessen Ausgestaltung – zwangsläufig sehr bedenkliche Auswirkungen auf die Interessen Dritter und das Gemeinwohl.
-</p>
-          <a id="socialadsbutton" href="leistungsschutzrecht.info/">Jetzt Abstimmen</a>
+          <h1>Ändere deinen namen</h1>
+          <p>Hallo Waldtanne34 wir haben bei der registragtion...</p>
+       <button id="socialadsbutton" onclick="location.href='."'profil'".'">Artikel Schreiben</button>
           </div>
-          </article>';*/
+          </article>';
          
          
 

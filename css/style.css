@@ -674,8 +674,9 @@ margin-top:0px;
     width: 298px;
     margin-left: -20px;
      margin-top: -10px;
+     text-align: center;
 }
-#socialadsbutton {
+#socialadsbutton{
   background-color: #8F9190;
   border:thin solid #666666;
   border-bottom-left-radius:8px;
@@ -683,13 +684,10 @@ margin-top:0px;
   border-top-left-radius:8px;
   border-top-right-radius:8px;
   color:#F8FAF9;
- 
   font-weight:bold;
-
-  margin-left: 0px;
-  padding:5px 10px;
-  width: 250px;
+  padding:10px 10px;
   text-decoration: none;
+  width: 298px;
 }
 
 
