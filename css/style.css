@@ -529,7 +529,7 @@ margin-top: 10px;
   width: 250px;
 }
 #follow_button_location {
-  background-color:#0060A6;
+  background-color:#333333;
   border:thin solid #666666;
   border-bottom-left-radius:8px;
   border-bottom-right-radius:8px;
@@ -614,7 +614,7 @@ margin-top:0px;
      margin-right:20px;
 }
 .follow_button_location {
-  background-color:#0060A6;
+  background-color:#333333;
   border:thin solid #666666;
   border-bottom-left-radius:8px;
   border-bottom-right-radius:8px;
