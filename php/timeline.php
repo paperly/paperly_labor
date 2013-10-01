@@ -332,13 +332,7 @@ while ($row = mysql_fetch_object($result44)) {
     
     //ads
     if ($count == 3) {
-        /*
-          $adv = '<div class="post" style="height:300px;">
-          <p  align="justify"  style="padding:10px;">WERBUNG </p>
-          <p><img src="bayern.jpg"/ height="200px" > </p>
-          </div>';
-          echo $adv;
-         */
+
         echo get_socialad();
         
     //    $count = 0;
