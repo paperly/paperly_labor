@@ -270,8 +270,57 @@ $articleLinkLength = 18;
                                 $result44 = mysql_query($sql1);
                                 $count = 0;
 // format result
+<<<<<<< HEAD
                                 while ($row = mysql_fetch_object($result44)) {
                                     echo load_article_html($row->topic, $row->article_text, $row->article_id, $row->source, $row->creator, $row->image, $row->date);
+=======
+while ($row = mysql_fetch_object($result44)) {
+          echo load_article_html($row->topic,$row->article_text,$row->article_id,$row->source,$row->creator,$row->image,$row->date);
+
+    
+    //ads
+    if ($count == 2) {
+        /*
+          $adv = '<div class="post" style="height:300px;">
+          <p  align="justify"  style="padding:10px;">WERBUNG </p>
+          <p><img src="bayern.jpg"/ height="200px" > </p>
+          </div>';
+          echo $adv;
+         */
+        echo get_socialad();
+        $count = 0;
+    }
+    $count++;
+    //end ads
+}
+// display nulled article list
+if ($count == 0){
+    echo '<article class="timeline-article">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-7791364251025556";
+/* Timeline 250 */
+google_ad_slot = "4680684621";
+google_ad_width = 250;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></br>
+                                    </article>';
+    
+ /*  echo' <article class="timeline-article">
+                    <div id="socialad">
+                    <h1>Jetzt einen Artikel schreiben</h1>
+                    <p>Werde paperly und schreibe einen Artikel</p>
+                    <a href="/schreiben"><input  class="follow_button_location" type="submit" name="" value="Artikel schreiben"/></a>
+                    </div>
+                    </article>';
+    */
+    
+}
+?>
+>>>>>>> 6f749b82dc453f3a0fd413108648e5424e3faa81
 
 
                                 
