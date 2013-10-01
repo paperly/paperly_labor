@@ -263,21 +263,23 @@ function load_promotioncalcalation($months, $locations) {
         
         
       if (isset($_SESSION["user_id"])) {
+         // Schreibe einen Artikel!
    $ads_array[] = '<article class="timeline-article">
           <div id="socialad">
-          <h1>Werde paperly!</h1>
-          <p>Das Artikel schreiben hilft dir um alles in der richtigen ordnung Pflumen mit Äpfeln zu werden.</p>
+          <h1>Sei paperly!</h1>
+          <p>Schreibe einen Artikel und erreiche Menschen aus Deiner Stadt.</p>
        <button id="socialadsbutton" onclick="location.href='."'schreiben'".'">Artikel Schreiben</button>
           </div>
           </article>';
 } 
         else
         {
+              // Registriere Dich! 
                $ads_array[] = '<article class="timeline-article">
           <div id="socialad">
-          <h1>Registriere Doch!</h1>
-          <p>Hallo Waldtanne34 wir haben bei der registragtion...</p>
-       <button id="socialadsbutton" onclick="location.href='."'start'".'">Jetzt Resigistrieren</button>
+          <h1>Werde paperly!</h1>
+          <p>Registriere Dich und werde Teil des lokalen Nachrichtennetzwerks.</p>
+       <button id="socialadsbutton" onclick="location.href='."'start'".'">Jetzt Registrieren</button>
           </div>
           </article>';
          

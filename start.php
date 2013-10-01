@@ -268,7 +268,7 @@ https://www.facebook.com/paperlyde</p>
                                 <article class="login-box float-left" style="margin-left:-40px; margin-top: 60px;">
                                     <h1 class="csc-firstHeader" style="font-size:24px;" >Neu bei paperly?</h1>
                                     <form class="login-form" method="post" action="start.php" enctype="multipart/form-data">
-                                        <p style="font-size:18px;">Registriere dich Kostenlos!</p>
+                                        <p style="font-size:18px;">Registriere Dich kostenlos!</p>
                                         <fieldset class="login-fieldset">
                                             <legend class="login-legend">Formulardaten</legend>
                                             <div class="login-fieldwrap">
