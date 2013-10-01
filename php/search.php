@@ -6,7 +6,7 @@ include "php/functions.php";
 include "php/functionsTimeline.php";
 $user_id = $_SESSION["user_id"];
 // global values
-$target = 'entdecken';
+$target = 'search';
 $articleTextLength = 160;
 $articleLinkLength = 18;
 ?>
@@ -92,7 +92,7 @@ $articleLinkLength = 18;
                     fitToView: false,
                     autoSize: false,
                     beforeClose: function() {
-                        parent.history.pushState(null, 'paperly Artikel', 'http://<?php echo $basedir; ?>/entdecken');
+                        parent.history.pushState(null, 'paperly Artikel', 'http://<?php echo $basedir; ?>/search');
                     }
                 });
             });
@@ -107,7 +107,7 @@ $articleLinkLength = 18;
                     fitToView: false,
                     autoSize: false,
                     beforeClose: function() {
-                        parent.history.pushState(null, 'paperly Artikel', 'http://<?php echo $basedir; ?>/entdecken');
+                        parent.history.pushState(null, 'paperly Artikel', 'http://<?php echo $basedir; ?>/search');
                     }
                 });
             });
@@ -150,11 +150,11 @@ $articleLinkLength = 18;
                         <div id="header-location-box">
                             <nav role="navigation" id="nav-filter">
                               
-                                <h2>Entdecke paperly:</h2>
+                                <h2>Durchsuche paperly:</h2>
 
                                 <?php
                                 if (empty($_POST["searchkeyword"])) {
-                                    $searchkeyword = "Keyword hier eintragen";
+                                    $searchkeyword = "Suchbegriff hier eintragen";
                                 } else {
                                     $searchkeyword = $_POST["searchkeyword"];
                                 }
@@ -259,7 +259,7 @@ $user_id = $_SESSION["user_id"];
 $abfrage2 = "INSERT INTO log_db (id, action_id, user_id, data_1, data_2) VALUES ('$maxid',5,'$user_id','$start_location','$start_theme');";
 mysql_query($abfrage2);
 //$sql1 = load_abo_sql($start_location, $start_theme,$last_art);
-$_SESSION['entdecken'] = $searchkeyword;
+$_SESSION['search'] = $searchkeyword;
 
 $i = 1;
 /* while($i < count($artikel_array)) {
@@ -346,7 +346,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
                             <!-- TODO: GET vars including lastArticelID -->
                             <!-- TODO:  -->
                             <nav id="page-nav">
-                                <a href="php/load_entdecken.php?page=2"></a>
+                                <a href="php/load_search.php?page=2"></a>
                             </nav>
                         </section>
                     </div>

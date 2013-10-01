@@ -15,7 +15,7 @@ RewriteRule start$ start.php
 RewriteRule schreiben$ write_article.php
 RewriteRule mypaperly$ mypaperly.php
 RewriteRule abmelden$ logout.php
-RewriteRule entdecken$ entdecken.php
+RewriteRule suchen$ search.php
 RewriteRule einstellungen$ profil.php
 RewriteRule twitter$ http://twitter.com/paperly_de [NC]
 RewriteRule facebook$ http://facebook.com/paperlyde [NC]

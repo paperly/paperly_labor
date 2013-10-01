@@ -2,7 +2,7 @@
 
 session_start();
 if (isset($_SESSION["user_id"])) {
-    include "php/entdecken.php";
+    include "php/search.php";
 } else {
     echo "<script language='javascript'>";
     echo "window.location.href='/'";

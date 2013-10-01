@@ -1055,7 +1055,7 @@ function load_promotioncalcalation($months, $locations) {
         $html .= formatHTMLLineBreak('      <nav role="navigation" id="nav-top">', 8);
         $html .= formatHTMLLineBreak('        <ul>', 8);
         $html .= formatHTMLLineBreak('          <li class="first"><a href="">paperly Towns</a></li>', 8);
-        $html .= formatHTMLLineBreak('          <li><a href="/entdecken">Entdecken</a></li>', 8);
+        $html .= formatHTMLLineBreak('          <li><a href="/suchen">Suche</a></li>', 8);
         $html .= formatHTMLLineBreak('          <li><a href="/schreiben">Artikel Schreiben</a></li>', 8);
         $html .= formatHTMLLineBreak('          <li><a href="/mypaperly">my paperly</a></li>', 8);
 

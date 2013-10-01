@@ -60,9 +60,9 @@ if(!empty($_GET['pwcode']) && !empty($_GET['userid']))
 			// hier wird mail versand
 			
 			$empfaenger = $email;
-			$betreff = " - paperly.de - Dein neues Passwort wurde erstellt";
+			$betreff = "Neues Passwort paperly.de";
 			$from = "From: Paperly <mail@paperly.de>";
-			$text = "Wir haben dir einen neues passwort erstellt. Dein neues Passwort ist: ".$passwd ." Hier einloggen http://paperly.de Unter Profil-> Einstellungen kannst du Dein Passwort ändern";
+			$text = "Dein neues Passwort lautet: ".$passwd ." Logge Dich mit dem neuen Passwort auf  http://paperly.de ein und passe es Unter Mein Profil-> Einstellungen an";
 
 	mail($empfaenger, $betreff, $text, $from);
   				
@@ -98,7 +98,7 @@ if(!empty($_POST['EMail']))
 		$userid = $row->user_id;
 		
 		$passwort = $row->password;
-		echo "Dir wurde ein Bestätigungslink geschickt!!<br/>";
+		echo "Du hast soeben eine E-Mail mit Deinem neuen Passwort geschickt bekommen.<br/>";
 		
 		$str= $email.$passwort.$userid;
 		
@@ -111,7 +111,7 @@ if(!empty($_POST['EMail']))
 	$empfaenger = $email;
 	$betreff = "Passwortvergessen paperly.de";
 	$from = "From: Paperly <mail@paperly.de>";
-	$text = "Du hast dein passwort vergessen. Hier kannst du ein neues passwort erstellen: http://paperly.de/index.php?pwcode=".$hashcode."&userid=".$userid;
+	$text = "Du hast anscheinend Dein Passwort vergessen. Hier kannst du Dein Passwort ändern: http://prebeta.paperly.de/index.php?pwcode=".$hashcode."&userid=".$userid;
 
 	mail($empfaenger, $betreff, $text, $from);
 
@@ -124,7 +124,7 @@ if(!empty($_POST['EMail']))
 	
 	else
 	{
-		echo "deine mail ist nicht im system";
+		echo "Die angegebene E-Mail Adresse ist nicht in unserem System vorhanden.";
 	}
 	
 	
@@ -149,9 +149,9 @@ if(!empty($_POST['EMail']))
 
             <div id="" style="">
                  <form class="login-form" method="post" action="passwortvergessen.php" enctype="multipart/form-data">
-                <p>Hast du den Passwort vergessen? Dann trage deine Mailadresse hier ein..</p>
+                <p>Du hast Dein Passwort vergessen? Trage hier Deine E-Mail Adresse ein:</p>
                 <fieldset class="login-fieldset">
-                  <legend class="login-legend">Formulardaten</legend>
+                  <legend class="login-legend"></legend>
                   
                     <label class="login-label" for="loginEMail" >Email-Adresse:</label></br>
                     <input id="loginEMail" class="login-field" type="email" required value="" name="EMail" style=" width:200px;"> <input class="" type="submit" name="" value="Abschicken" style=" width: 100px; height:30px;">
