@@ -8,7 +8,6 @@ $user_id = $_SESSION["user_id"];
 // global values
 
 $target = '/';
-
 ?>
 <!doctype html>
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
@@ -84,7 +83,7 @@ $target = '/';
                     }
                 });
 
-               
+
             });
 
             $(document).ready(function() {
@@ -102,16 +101,23 @@ $target = '/';
                 });
             });
         </script>
-                   <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function() {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-40911491-1', 'paperly.de');
-  ga('send', 'pageview');
+            ga('create', 'UA-40911491-1', 'paperly.de');
+            ga('send', 'pageview');
 
-</script>
+        </script>
     </head>
     <?php
     $art_id = $_GET["artid"];
@@ -125,12 +131,12 @@ $target = '/';
     }
     ?>">
               <?php
-        // set docuemnt header, check functions.php
-        if (isset($_SESSION["user_id"]))
-            echo getDocumentHeaderLoggedIn('paper', $_SESSION["user_id"], $pdoConnection);
-        else
-            echo getDocumentHeaderLoggedOff();
-        ?>
+              // set docuemnt header, check functions.php
+              if (isset($_SESSION["user_id"]))
+                  echo getDocumentHeaderLoggedIn('paper', $_SESSION["user_id"], $pdoConnection);
+              else
+                  echo getDocumentHeaderLoggedOff();
+              ?>
         <div id="container">
             <div id="header-designwrapper-left"></div>
             <div id="header-designwrapper-right"></div>
@@ -142,35 +148,49 @@ $target = '/';
                             <div id="header-papercontrolbox">
                                 <!--<div class="header-papercontrolbox-content">Speichere Deine aktuelle Auswahl als Paper: </div>-->
                             </div>
-                            
-                                <?php
-                            // set docuemnt header, check functions.php
+
+                            <?php
+// set docuemnt header, check functions.php
                             if (!isset($_SESSION["user_id"]))
                                 echo getDocumentLogin();
                             ?>
-                                 
-                             
-                               
-                              
-                           
+
+
+
+
+
                         </div>
-                        
-                        
-                        
+
+
+
                         <div id="header-location-box">
                             <nav role="navigation" id="nav-filter">
-                              
+
                                 <h2>Ich möchte Nachrichten aus:</h2>
 
                                 <?php
                                 if (empty($_POST["selectedNavItemLocation"])) {
-                                    $start_location = 1;
+
+                                    $info = geoip_record_by_name($_SERVER['REMOTE_ADDR']);
+                                    $city = $info['city'];
+                                    if ($city == "Munich") {
+                                        $city = "München";
+                                    }
+                                   // $city = "Oberstaufen";
+                                    $sql = "SELECT location_id FROM location WHERE name = '$city';";
+                                    $ergebnis = mysql_query($sql);
+                                    $row = mysql_fetch_object($ergebnis);
+                                    $start_location = $row->location_id;
+
+                                    if (empty($start_location)) {
+                                        $start_location = 1;
+                                    }
                                 } else {
                                     $start_location = $_POST["selectedNavItemLocation"];
                                 }
-                                 if (!empty($_GET["location"])) {
+                                if (!empty($_GET["location"])) {
                                     $start_location = $_GET["location"];
-                                } 
+                                }
                                 $sql = "SELECT name FROM location WHERE location_id = $start_location;";
                                 $ergebnis = mysql_query($sql);
                                 $row = mysql_fetch_object($ergebnis);
@@ -184,33 +204,33 @@ $target = '/';
                                 } else {
                                     $followtext = "Entfolgen";
                                 }
-                                
-                                 if($start_location == 1){
+
+                                if ($start_location == 1) {
                                     $location_name = "Wähle Deine Stadt";
                                 }
                                 ?>
-  <script type = 'text/javascript'>
+                                <script type = 'text/javascript'>
 
-    history.pushState(null, 'paperly Artikel', '<?php echo "http://".$basedir."/town/".$start_location."";?>');
- $('.fancybox').fancybox({
-                    'padding': 0,
-                    'margin': 0,
-                    'width': 875,
-                    'height': '90%',
-                    fitToView: false,
-                    autoSize: false,
-                    beforeClose: function() {
-                        parent.history.pushState(null, 'paperly Artikel', '<?php echo "http://".$basedir."/town/".$start_location."";?>');
-                    }
-                });
-</script> 
+            history.pushState(null, 'paperly Artikel', '<?php echo "http://" . $basedir . "/town/" . $start_location . ""; ?>');
+            $('.fancybox').fancybox({
+                'padding': 0,
+                'margin': 0,
+                'width': 875,
+                'height': '90%',
+                fitToView: false,
+                autoSize: false,
+                beforeClose: function() {
+                    parent.history.pushState(null, 'paperly Artikel', '<?php echo "http://" . $basedir . "/town/" . $start_location . ""; ?>');
+                }
+            });
+                                </script> 
                                 <div class="location-box">
                                     <div id="location-box-search">
                                         <input id="searchLocation" autofocus class="field" type="text" value="" placeholder="<?php echo $location_name; ?>" name="Location">
-                                            <?php if($start_location != 1 &&isset($_SESSION["user_id"])){ 
-                                                ?>
-                                        <a href='javascript:follow_add_location(<?php echo $start_location; ?>);'><input  id="follow_button_location" type="submit" name="" value="<?php echo $followtext; ?>"/></a>
-                                            <?php } ?>
+<?php if ($start_location != 1 && isset($_SESSION["user_id"])) {
+    ?>
+                                            <a href='javascript:follow_add_location(<?php echo $start_location; ?>);'><input  id="follow_button_location" type="submit" name="" value="<?php echo $followtext; ?>"/></a>
+                                        <?php } ?>
                                     </div>
                                     <div id="locationFollow">
 
@@ -231,9 +251,9 @@ $target = '/';
                 <div class="wrapper clearfix">
                     <div id="notificationbox">Bitte fülle folgendes Formular aus</div>
                     <div id="content-column">
-                        
-                        
-                        
+
+
+
                         <section>
                             <div id="submitFilter" style="display: none">
                                 <form name="formArtikelFilter" enctype="multipart/form-data" class="submitfilter_form" action="<?php echo $target ?>" method="post">
@@ -246,13 +266,12 @@ $target = '/';
 
                             <div id="timeline-articlelist">
 
-                           
-                               
+
+
 
 
 
 <?php
-
 // TODO: get location filter
 // set default item if POST var is undefined
 // TODO: get default theme, including nav selection
@@ -326,13 +345,13 @@ $result44 = mysql_query($sql1);
 $count = 0;
 // format result
 while ($row = mysql_fetch_object($result44)) {
-  
-       echo load_article_html($row->topic,$row->article_text,$row->article_id,$row->source,$row->creator,$row->image,$row->date);
 
-   
-     //beginn social ads
+    echo load_article_html($row->topic, $row->article_text, $row->article_id, $row->source, $row->creator, $row->image, $row->date);
+
+
+    //beginn social ads
     if ($count == 5) {
-       
+
         echo get_socialad();
         $count = 0;
     }
@@ -340,11 +359,10 @@ while ($row = mysql_fetch_object($result44)) {
     //end ads
 }
 // display nulled article list
-
 ?>
 
 
-                             
+
 
 
                             </div>
@@ -379,9 +397,9 @@ while ($row = mysql_fetch_object($result44)) {
                     navSelector: '#page-nav', // selector for the paged navigation 
                     nextSelector: '#page-nav a', // selector for the NEXT link (to page 2)
                     itemSelector: '.timeline-article', // selector for all items you'll retrieve
-                    donetext     : null ,
-                    loadingText  : null,
-                    loadingImg   : null, 
+                    donetext: null,
+                    loadingText: null,
+                    loadingImg: null,
                     bufferPx: 500
                 },
                 // trigger Masonry as a callback
