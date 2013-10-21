@@ -177,14 +177,27 @@ $target = '/';
                                         $city = "München";
                                     }
                                    // $city = "Oberstaufen";
-                                    $sql = "SELECT location_id FROM location WHERE name = '$city';";
+                                    $sql = "SELECT location_id FROM location WHERE name = '$city' AND location_level = 6;";
                                     $ergebnis = mysql_query($sql);
                                     $row = mysql_fetch_object($ergebnis);
                                     $start_location = $row->location_id;
-
+                                    
+                                    
+                                    $sql = "SELECT count(article) as count FROM article_locations_belongs_to where location = $start_location";
+                                    $ergebnis = mysql_query($sql);
+                                    $row = mysql_fetch_object($ergebnis);
+                                    $count= $row->count;
+                                    
+                                    if($count<10){
+                                         $start_location = 1;
+                                    }
+                                    
+                                    
                                     if (empty($start_location)) {
                                         $start_location = 1;
                                     }
+                                    
+                                    
                                 } else {
                                     $start_location = $_POST["selectedNavItemLocation"];
                                 }
