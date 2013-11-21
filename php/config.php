@@ -1,8 +1,7 @@
 <?php
 
 // DB connect - all-inkl.de
-//$verbindung = mysql_connect("paperly.de", "paperly_01_c", "f4s5S3dg3d") or die("Verbindung zur Datenbank konnte nicht hergestellt werden");
-$verbindung = mysql_connect("127.0.0.1", "root", "") or die("Verbindung zur Datenbank konnte nicht hergestellt werden");
+$verbindung = mysql_connect("paperly.de", "paperly_01_c", "f4s5S3dg3d") or die("Verbindung zur Datenbank konnte nicht hergestellt werden");
 
 // set utf 8
 mysql_set_charset('utf8', $verbindung);
@@ -20,12 +19,9 @@ $basedir = "localhost";
 
 
 // set PDO connection parameter
-//$pdoHost = 'mysql:host=paperly.de;dbname=paperly_01_c';
-//$pdoUsername = 'paperly_01_c';
-//$pdoPassword = 'f4s5S3dg3d';
-$pdoHost = 'mysql:host=localhost;dbname=paperly_01_c';
-$pdoUsername = 'root';
-$pdoPassword = '';
+$pdoHost = 'mysql:host=paperly.de;dbname=paperly_01_c';
+$pdoUsername = 'paperly_01_c';
+$pdoPassword = 'f4s5S3dg3d';
 // set PDO db connection
 try {
     $pdoConnection = new PDO($pdoHost, $pdoUsername, $pdoPassword);
