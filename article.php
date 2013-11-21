@@ -1,6 +1,6 @@
 <?php
 session_start();
-$user_id = $_SESSION["user_id"];
+$user_id = @$_SESSION["user_id"];
 include "php/functions.php";
 include "php/config.php";
 $art_id = $_GET["artid"];

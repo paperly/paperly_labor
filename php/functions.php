@@ -8,6 +8,7 @@ include "config.php";
 function load_commentbox_html($article_id){
     $abfrage = "SELECT * FROM article_comment,user WHERE article_comment.user_id = user.user_id AND article_id = $article_id ORDER by timestamp DESC ;";
  $ergebnis = mysql_query($abfrage);
+    $html = "";
      while ($row = mysql_fetch_object($ergebnis)) {
                 $text = $row->text;
                 $user_name = $row->nickname;
@@ -19,7 +20,7 @@ $wochentag = $wochentage[$t - 1];
 $time = date('d.m.Y H:i', $date);
 $time = $wochentag . ", " . $time . " Uhr";
               
-             
+                
                 $html .= "<p><b><a target='_parent' href='/$user_name'>$user_name</a> am $time</b></br>";
                 $html .= "$text</p>";
             }
@@ -999,9 +1000,9 @@ function load_promotioncalcalation($months, $locations) {
     
          
             $basedir = "localhost";
-        $html .= formatHTMLLineBreak('<base href="http://'.$basedir.'">', 0);
-   $html .= formatHTMLLineBreak('<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon; charset=binary">');
-      $html .= formatHTMLLineBreak('<link rel="icon" href="images/favicon.ico" type="image/x-icon; charset=binary">');
+        $html = formatHTMLLineBreak('<base href="http://'.$basedir.'">', 0);
+   $html .= formatHTMLLineBreak('<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon; charset=binary">', 8);
+      $html .= formatHTMLLineBreak('<link rel="icon" href="images/favicon.ico" type="image/x-icon; charset=binary">', 8);
 //    $html .= formatHTMLLineBreak('<title>' . $headerid . ': paperly</title>');
         $html .= formatHTMLLineBreak('<title>paperly - Dein lokales Nachrichtennetzwerk</title>', 8);
         return $html;

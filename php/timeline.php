@@ -1,10 +1,10 @@
 <?php
-session_start();
+//session_start();
 // get db connection
 include "php/config.php";
 include "php/functions.php";
 include "php/functionsTimeline.php";
-$user_id = $_SESSION["user_id"];
+$user_id = @$_SESSION["user_id"];
 // global values
 
 $target = '/';
@@ -93,6 +93,7 @@ $target = '/';
                     'margin': 0,
                     'width': 875,
                     'height': '90%',
+                    'scrolling': 'no',
                     fitToView: false,
                     autoSize: false,
                     beforeClose: function() {
@@ -120,7 +121,7 @@ $target = '/';
         </script>
     </head>
     <?php
-    $art_id = $_GET["artid"];
+    $art_id = @$_GET["artid"];
     if (!empty($art_id)) {
         echo "<a class='fancybox2 fancybox.iframe' href='article.php?artid=" . $art_id . "' target='_new' ></a>";
     }
@@ -171,8 +172,10 @@ $target = '/';
                                 <?php
                                 if (empty($_POST["selectedNavItemLocation"])) {
 
-                                    $info = geoip_record_by_name($_SERVER['REMOTE_ADDR']);
-                                    $city = $info['city'];
+                                    //$info = geoip_record_by_name($_SERVER['REMOTE_ADDR']);
+                                    //$city = $info['city'];
+                                    //Deaktiviert und konstant auf 'Munich' gesetzt, da geoip offline nicht nutzbar. 
+                                    $city = "Munich";
                                     if ($city == "Munich") {
                                         $city = "München";
                                     }
@@ -208,16 +211,17 @@ $target = '/';
                                 $ergebnis = mysql_query($sql);
                                 $row = mysql_fetch_object($ergebnis);
                                 $location_name = $row->name;
-
-                                $sql = "SELECT * FROM  `location_follow` WHERE user_id_self = $user_id AND location_id = $start_location;";
-                                $data = mysql_query($sql);
-                                $row = mysql_fetch_object($data);
-                                if (empty($row)) {
-                                    $followtext = "Folgen";
-                                } else {
-                                    $followtext = "Entfolgen";
+                                
+                                if (!empty($user_id)){
+                                    $sql = "SELECT * FROM `location_follow` WHERE user_id_self = $user_id AND location_id = $start_location;";
+                                    $data = mysql_query($sql);
+                                    $row = mysql_fetch_object($data);
+                                    if (empty($row)) {
+                                        $followtext = "Folgen";
+                                    } else {
+                                        $followtext = "Entfolgen";
+                                    }
                                 }
-
                                 if ($start_location == 1) {
                                     $location_name = "Wähle Deine Stadt";
                                 }
@@ -333,7 +337,7 @@ $ergebnis1 = mysql_query($abfrage1);
 $row = mysql_fetch_object($ergebnis1);
 $maxid = $row->maxid;
 $maxid++;
-$user_id = $_SESSION["user_id"];
+$user_id = @$_SESSION["user_id"];
 $abfrage2 = "INSERT INTO log_db (id, action_id, user_id, data_1, data_2) VALUES ('$maxid',5,'$user_id','$start_location','$start_theme');";
 mysql_query($abfrage2);
 //$sql1 = load_abo_sql($start_location, $start_theme,$last_art);

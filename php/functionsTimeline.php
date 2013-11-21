@@ -83,10 +83,10 @@ function load_article_html($title,$text,$art_id,$link,$creator_id,$bild,$date) {
     $strippedlink_cropped = stripArticleLink($link, $articleLinkLength);
     // get timestamp
     $date = strtotime($date);
-    $timestamp = $row->timestamp_event;
+    //$timestamp = $row->timestamp_event;
     //$atime = date("d.m.Y H:i");
     $atime = strtotime("now");
-    $btime = strtotime($timestamp);
+    //$btime = strtotime($timestamp);
     // $zeit = $date - $atime ; // in sekunden die verstrichen ist
     $diff = $atime - $date;
     $secs = $diff;
@@ -149,7 +149,7 @@ function load_article_html($title,$text,$art_id,$link,$creator_id,$bild,$date) {
 
 
 
-$user_id = $_SESSION["user_id"];
+$user_id = @$_SESSION["user_id"];
     $like = load_likebox($user_id, $art_id);
 
 
