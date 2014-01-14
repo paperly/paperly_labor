@@ -279,7 +279,15 @@ $target = '/';
                                     <!-- TODO: set add location filter -->
                                 </form>
                             </div>
-
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Leaderboard Timeline -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-7791364251025556"
+     data-ad-slot="2456947829"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
                             <div id="timeline-articlelist">
 
@@ -405,8 +413,8 @@ while ($row = mysql_fetch_object($result44)) {
                 $container.imagesLoaded(function() {
                     $container.masonry({
                         itemSelector: '.timeline-article',
-                        columnWidth: 300,
-                        gutterWidth: 20
+                        columnWidth: 290,
+                        gutterWidth: 30
                     });
                 });
                 // begin infinity scroll, fixed code, loading per php --> GET Var

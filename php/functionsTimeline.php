@@ -142,7 +142,7 @@ function load_article_html($title,$text,$art_id,$link,$creator_id,$bild,$date) {
     //bild html
     $bild_html = "";
     if (empty($link)) {
-        $bild_html = "<a class='fancybox fancybox.iframe' href='/articleopen/" . $art_id . "' target='_new' ><img src='upload/timeline/$bild' width='300'  alt='paperly'></a>";
+        $bild_html = "<a  class='fancybox fancybox.iframe' href='/articleopen/" . $art_id . "' target='_new' ><img src='upload/timeline/$bild'  id='timeline' alt='paperly'></a>";
     } else {
         $bild_html = "<a href='redirect.php?id=" . $art_id . "' target='_new' ><img src='upload/timeline/$bild' width='300' ' alt='paperly'></a>";
     }
@@ -159,24 +159,11 @@ $commentbox =load_commentbox_html($art_id);
 
     $html = '
                                     <article class="timeline-article">  <div class="article-subbox">
-                                    <h1 style="color:#ffffff;border:solid #000 1px; margin-top:-20px; margin-bottom:20px; margin-left:-20px; background-color:#5e972e; width:276px; padding:10px;">' . $title . '</h1>
-                                     ' . $bild_html . '
-                                        <div class="likebox" id="likebox_' . $art_id . '">' . $like . ' </div>
-                                         <div class="article-post-time">
-                                          ' . $time . '
-                                            </div>
-                                    
-                                            <div class="article-origin">
-                                           ' . $quellen_text . '
-                                             ' . $quellen_bild . '
-                                            </div>
-                                            
-                                          
-
-                                      </div>
-                                      <p>' . $text . '</p>
+                                    <div>' . $bild_html . '</div>
+                                        <h1>lalala </h2>
                                 
-                                   
+                                   </div>
+                                
                                     </article>';
 
     return $html;
