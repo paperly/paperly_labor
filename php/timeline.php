@@ -279,16 +279,18 @@ $target = '/';
                                     <!-- TODO: set add location filter -->
                                 </form>
                             </div>
+                            
+
+       <div id="adsense">
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Leaderboard Timeline -->
+<!-- start big -->
 <ins class="adsbygoogle"
-     style="display:inline-block;width:728px;height:90px"
+     style="display:inline-block;width:970px;height:90px"
      data-ad-client="ca-pub-7791364251025556"
-     data-ad-slot="2456947829"></ins>
+     data-ad-slot="6688671025"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
+</script></div>
                             <div id="timeline-articlelist">
 
 
@@ -388,7 +390,17 @@ while ($row = mysql_fetch_object($result44)) {
 
 
 
-
+<article class="timeline-article" style="width: 100%; margin-left: -2px; padding: 0px;">
+       <div id="adsense">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- start big -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:970px;height:90px"
+     data-ad-client="ca-pub-7791364251025556"
+     data-ad-slot="6688671025"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></article>
 
                             </div>
                             <!-- TODO: GET vars including lastArticelID -->

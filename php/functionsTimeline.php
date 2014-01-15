@@ -108,7 +108,7 @@ function load_article_html($title,$text,$art_id,$link,$creator_id,$bild,$date) {
         $time = "vor " . $hours . " Stunden ";
     if ($diff >= 86400) {
         // $time = "am ".date('d.m.Y H:i', $date);
-        $time = "am " . date('d.m.Y ', $date);
+        $time = "" . date('d.m.Y ', $date);
     }
     // TESTING: get values by article query
     //$time = 'Vor 10 Minuten';
@@ -160,8 +160,10 @@ $commentbox =load_commentbox_html($art_id);
     $html = '
                                     <article class="timeline-article">  <div class="article-subbox">
                                     <div>' . $bild_html . '</div>
-                                        <h1>lalala </h2>
-                                
+                                        <p id="article_town">Mannheim</p>
+                                        <p id="article_time">'.$time.'</p>
+                                         <p id="article_title">'.$title.'</p>
+                                  <div class="likebox" id="likebox_' . $art_id . '">' . $like . ' </div>
                                    </div>
                                 
                                     </article>';
