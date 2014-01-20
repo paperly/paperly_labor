@@ -54,7 +54,7 @@ green { color: #60A917; }
 emerald { color: #008A00; }
 
 /* primary styles */
-body { font-family: "HelveticaNeue-Light", Arial, Helvetica, sans-serif; font-size:14px; color:#666666; }
+body { font-family: HelveticaNeue-Light,  Helvetica, Arial,sans-serif; font-size:14px; color:#666666; }
 h1 { font-size: 18px; margin-bottom: 10px;  margin-top: 10px; }
 h2 { font-size: 14px; }
 h1.csc-firstHeader,
@@ -104,7 +104,19 @@ header #logo { float: left; margin-left: 35px; margin-top: 10px; }
 header #header-papercontrolbox { display: none; }
 /* hide header navigation on default */
 header #header-navbox { display: none; }
-header nav { border-bottom: 1px solid #666666; border-top: 1px solid #666666; float: left; padding-bottom: 10px; padding-top: 10px; width: 100%; }
+header nav { 
+    margin-left: 40px;
+    border: 1px solid #9f9f9f;  float: left; padding-bottom: 10px; padding-top: 10px; width: 900px; 
+ -webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+
+background:-moz-linear-gradient(bottom,#eeeeee,#ffffff); /* Firefox */
+background:-webkit-gradient(linear,left top,left bottom,from(#ffffff),to(#eeeeee)); /* Chrome, Safari */
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',endColorstr='#eeeeee'); /* Internet Explorer */
+
+
+}
 header nav>ul { float: left; }
 header nav ul { list-style-type: none; }
 header nav ul li { /*border-left: 1px solid #666666;*/ border-right: 1px solid #666666; display: inline; padding: 0 12px 0 14px; }
@@ -121,11 +133,11 @@ header nav ul li a.selected { color: #000000; /*text-decoration: none;*/ text-de
 header nav#nav-main ul,
 header nav#nav-main-levelone ul,
 header nav#nav-main-leveltwo ul { padding-left: 55px; padding-right: 55px; width: 870px; }
-header nav#nav-filter { }
+header nav#nav-filter {}
 header nav#nav-filter .nav-filter-desc { float: left; padding-left: 55px; padding-right: 20px; }
 header nav#nav-filter ul li.first { padding-left: 0; }
-header nav#nav-filter ul li { border: medium none; font-size: 14px; padding: 0 0 0 20px; }
-header nav#nav-main { border-bottom: 1px solid #000000; border-top: 0 none; margin-top: 0; }
+header nav#nav-filter ul li { border: medium none; font-size: 14px; padding: 0 0 0 20px;}
+header nav#nav-main {}
 header nav#nav-main ul li { font-size: 17px; padding: 3px 16px 3px 18px; }
 header nav#nav-main ul li.first { border-left: none; /*padding-left: 55px;*/ padding-left: 0; }
 header nav#nav-main-levelone,
@@ -269,6 +281,7 @@ input.css3button,
 #location-box { float: right; width: 500px;  }
 #location-box #location-box-search { }
 #location-box #location-box-search #searchLocation { width: 500px; }
+
 #location-box #location-box-result { }
 #location-box #location-box-result #location-box-result-links { float: left; margin-top: 10px; width: 100%; }
 #location-box #location-box-result #location-box-result-links a { background-color: #F8FAF9; border: thin solid #666666; border-radius: 8px 8px 8px 8px; color: #0060A6; float: left; margin-bottom: 5px; margin-right: 5px; padding: 5px 10px; }
@@ -278,8 +291,8 @@ input.css3button,
 #locationFollow {float: left; }
 /* Timeline */
 #timeline header #header-location-box { float: left; margin-left: -20px; width: 980px; }
-#timeline header #header-location-box h2 { float: left; margin: 5px 10px 5px 55px; }
-#timeline header #header-location-box input[type="text"] { padding: 4px 5px; width: 250px; }
+#timeline header #header-location-box p { float: left; margin: 5px 10px 5px 15px; color: #2a2a2a; font-size: 16px; }
+#timeline header #header-location-box input[type="text"] { padding: 5px 5px; width: 200px; border: thin solid #000000;  border-radius: 3px 3px 3px 3px;}
 #timeline header #header-navbox { display: table; float: left; margin-left: -20px; width: 980px; }
 #timeline header #header-papercontrolbox { display: table-cell; height: 68px; overflow: hidden; padding-left: 20px; vertical-align: middle; width: 680px; }
 #timeline #content-column { padding-right: 0; width: 975px; padding-left: 5px; }
@@ -369,6 +382,8 @@ input.css3button,
 #filter .paper-title-box-container .paper-title-box { float: left; width: 330px; }
 #filter #location-box #location-box-search #searchLocation,
 #filter .paper-title-box #paperTitle { padding: 5px; width: 100% }
+
+
 
 #locationFollow {float: left; }
 
@@ -580,19 +595,20 @@ input.css3button,
     width: 250px;
 }
 #follow_button_location {
-    background-color:#333333;
-    border:thin solid #666666;
+    background-color:#6daf34;
+    border:0px solid #666666;
     border-bottom-left-radius:8px;
     border-bottom-right-radius:8px;
     border-top-left-radius:8px;
     border-top-right-radius:8px;
     color:#F8FAF9;
-
+font-size: 13px;
     font-weight:bold;
 
-    margin-left: 20px;
-    padding:5px 10px;
-    width: 250px;
+    margin-left:20px;
+    padding:8px ;
+    width: 70px;
+    
 }
 #user_linelist_left{
     float: left;

@@ -167,7 +167,7 @@ $target = '/';
                         <div id="header-location-box">
                             <nav role="navigation" id="nav-filter">
 
-                                <h2>Ich möchte Nachrichten aus:</h2>
+                                <p>Wähle deine Stadt:</p>
 
                                 <?php
                                 if (empty($_POST["selectedNavItemLocation"])) {
