@@ -247,6 +247,9 @@ $target = '/';
 <?php if ($start_location != 1 && isset($_SESSION["user_id"])) {
     ?>
                                             <a href='javascript:follow_add_location(<?php echo $start_location; ?>);'><input  id="follow_button_location" type="submit" name="" value="<?php echo $followtext; ?>"/></a>
+                                             <a href='/schreiben'><input  id="button_a_write" type="submit" name="" value="Artikel Schreiben"/></a>
+                                            <a href='/mario<?php // hier fehlt username?>'><input  id="button_a_profil" type="submit" name="" value="Profil"/></a>
+                                              <a href='/abmelden'><input  id="button_a_logout" type="submit" name="" value="Logout"/></a>
                                         <?php } ?>
                                     </div>
                                     <div id="locationFollow">
