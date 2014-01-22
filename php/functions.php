@@ -1054,7 +1054,7 @@ function load_promotioncalcalation($months, $locations) {
 
     function getDocumentHeaderLoggedIn($headerid, $userid, $connection) {
         // TODO: check implemented javascript class: templateClass.js [showContentBox]
-        if ($headerid == 'bodyid') {
+      /*  if ($headerid == 'bodyid') {
             // do something
         }
         $sql = "SELECT * FROM  `user` WHERE user_id = '$userid';";
@@ -1112,13 +1112,13 @@ function load_promotioncalcalation($months, $locations) {
         $html .= formatHTMLLineBreak('      <p><a href="/' . $username . '">Profil ansehen</a></p>', 8);
         $html .= formatHTMLLineBreak('    </div>', 8);
         $html .= formatHTMLLineBreak('  </div>', 8);
-        $html .= formatHTMLLineBreak('</div>', 8);
+        $html .= formatHTMLLineBreak('</div>', 8);*/
         return $html;
     }
 
     function getDocumentHeaderLoggedOff() {
         // format header
-        $html = formatHTMLLineBreak('<div id="topbox" class="no-print">', 0);
+      /*  $html = formatHTMLLineBreak('<div id="topbox" class="no-print">', 0);
         // $html .= formatHTMLLineBreak('  <div class="wrapper">', 8);
         //$html .= formatHTMLLineBreak('    <div id="topbox-column">', 8);
         //$html .= formatHTMLLineBreak('      <div id="topbox-profil">', 8);
@@ -1143,12 +1143,12 @@ function load_promotioncalcalation($months, $locations) {
         //   $html .= formatHTMLLineBreak('      </form>', 8);
         //   $html .= formatHTMLLineBreak('    </div>', 8);
         //   $html .= formatHTMLLineBreak('  </div>', 8);
-        $html .= formatHTMLLineBreak('</div> ', 8);
+        $html .= formatHTMLLineBreak('</div> ', 8);*/
         return $html;
     }
 
     function getDocumentLogin() {
-        $html = '<div style="  float: right;width: 600px; margin-top: -55px; text-align: right;">
+       $html = '<div style="  float: right;width: 600px; margin-top: -55px; text-align: right;">
 
                                     <form  enctype="multipart/form-data" action="login.php" method="post">
 

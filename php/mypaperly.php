@@ -75,9 +75,36 @@ $user_id = $_SESSION["user_id"];
                     <div id="header-column">
                         <div id="header-topbox">
                             <div id="logo"><a href="index.php"><img src="images/design/logo.png"  height="54" alt="paperly"></a></div>
-                            <div id="header-papercontrolbox">
-                                <!--<div class="header-papercontrolbox-content">Speichere Deine aktuelle Auswahl als Paper: </div>-->
-                            </div>
+                             <!-- <div id="header-papercontrolbox">
+                                <div class="header-papercontrolbox-content">Speichere Deine aktuelle Auswahl als Paper: </div>
+                            </div>-->
+
+                            <?php
+// set docuemnt header, check functions.php
+                            if (!isset($_SESSION["user_id"])){
+                                echo getDocumentLogin();
+                            }
+                                else{
+                                    
+                                    //
+                                    // my paperly INFOBOX START
+                                    // 
+                                    $sql = "SELECT nickname FROM user WHERE user_id = '$user_id';";
+                                    $ergebnis = mysql_query($sql);
+                                    $row = mysql_fetch_object($ergebnis);
+                                    $username = $row->nickname;
+                                    ?>
+                                    <div id="header-infobox">
+                                        Hallo <a href="/<?php echo $username; ?>"><?php echo $username; ?></a>,</br>
+                                du hast  <a href="mypaperly">24 ungelesene Artikel</a></br>in 
+                                    deinem Garten
+                                    </div>
+                                    <?php
+                                    //
+                                    // my paperly INFOBOX ENDE
+                                    // 
+                                }
+                            ?>
                         </div>
                         <!--<div id="header-navbox"></div>-->
                     </div>

@@ -133,10 +133,10 @@ $target = '/';
     ?>">
               <?php
               // set docuemnt header, check functions.php
-              if (isset($_SESSION["user_id"]))
+             /* if (isset($_SESSION["user_id"]))
                   echo getDocumentHeaderLoggedIn('paper', $_SESSION["user_id"], $pdoConnection);
               else
-                  echo getDocumentHeaderLoggedOff();
+                  echo getDocumentHeaderLoggedOff();*/
               ?>
         <div id="container">
             <div id="header-designwrapper-left"></div>
@@ -146,14 +146,35 @@ $target = '/';
                     <div id="header-column">
                         <div id="header-topbox">
                             <div id="logo"><a href="index.php"><img src="images/design/logo.png" height="54" alt="paperly"></a></div>
-                            <div id="header-papercontrolbox">
-                                <!--<div class="header-papercontrolbox-content">Speichere Deine aktuelle Auswahl als Paper: </div>-->
-                            </div>
+                           <!-- <div id="header-papercontrolbox">
+                                <div class="header-papercontrolbox-content">Speichere Deine aktuelle Auswahl als Paper: </div>
+                            </div>-->
 
                             <?php
 // set docuemnt header, check functions.php
-                            if (!isset($_SESSION["user_id"]))
+                            if (!isset($_SESSION["user_id"])){
                                 echo getDocumentLogin();
+                            }
+                                else{
+                                    
+                                    //
+                                    // my paperly INFOBOX START
+                                    // 
+                                    $sql = "SELECT nickname FROM user WHERE user_id = '$user_id';";
+                                    $ergebnis = mysql_query($sql);
+                                    $row = mysql_fetch_object($ergebnis);
+                                    $username = $row->nickname;
+                                    ?>
+                                    <div id="header-infobox">
+                                        Hallo <a href="/<?php echo $username; ?>"><?php echo $username; ?></a>,</br>
+                                du hast  <a href="mypaperly">24 ungelesene Artikel</a></br>in 
+                                    deinem Garten
+                                    </div>
+                                    <?php
+                                    //
+                                    // my paperly INFOBOX ENDE
+                                    // 
+                                }
                             ?>
 
 
@@ -248,7 +269,7 @@ $target = '/';
     ?>
                                             <a href='javascript:follow_add_location(<?php echo $start_location; ?>);'><input  id="follow_button_location" type="submit" name="" value="<?php echo $followtext; ?>"/></a>
                                              <a href='/schreiben'><input  id="button_a_write" type="submit" name="" value="Artikel Schreiben"/></a>
-                                            <a href='/mario<?php // hier fehlt username?>'><input  id="button_a_profil" type="submit" name="" value="Profil"/></a>
+                                            <a href='/<?php echo $username; ?>'><input  id="button_a_profil" type="submit" name="" value="Profil"/></a>
                                               <a href='/abmelden'><input  id="button_a_logout" type="submit" name="" value="Logout"/></a>
                                         <?php } ?>
                                     </div>
@@ -282,19 +303,7 @@ $target = '/';
                                     <!-- TODO: set add location filter -->
                                 </form>
                             </div>
-                            
-
-       <div id="adsense">
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- start big -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:970px;height:90px"
-     data-ad-client="ca-pub-7791364251025556"
-     data-ad-slot="6688671025"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script></div>
-                            <div id="timeline-articlelist">
+                     <div id="timeline-articlelist">
 
 
 
@@ -382,8 +391,27 @@ while ($row = mysql_fetch_object($result44)) {
     //beginn social ads
     if ($count == 5) {
 
-        echo get_socialad();
-        $count = 0;
+       // echo get_socialad();
+       // 
+       // Google adsense
+      
+        ?>
+               <article class="timeline-article" style="width: 100%; margin-left: -2px; padding: 0px;"><div id="adsense">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- start big -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:970px;height:90px"
+     data-ad-client="ca-pub-7791364251025556"
+     data-ad-slot="6688671025"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div> </article>                  
+                                
+        <?php
+        
+       // 
+       // 
+       // $count = 0;
     }
     $count++;
     //end ads
