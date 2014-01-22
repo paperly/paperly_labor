@@ -1148,7 +1148,7 @@ function load_promotioncalcalation($months, $locations) {
     }
 
     function getDocumentLogin() {
-       $html = '<div style="  float: right;width: 600px; margin-top: -55px; text-align: right;">
+       $html = '<div style="  float: right;width: 600px;margin-top: 15px; margin-right: 20px; text-align: right;">
 
                                     <form  enctype="multipart/form-data" action="login.php" method="post">
 
