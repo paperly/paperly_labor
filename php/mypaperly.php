@@ -107,6 +107,35 @@ $user_id = $_SESSION["user_id"];
                             ?>
                         </div>
                         <!--<div id="header-navbox"></div>-->
+                        
+                         <div id="header-navigation-box">
+                            <nav role="navigation" id="nav-filter">
+
+                                <p sytle="width:400px;">my paperly - dein persönlicher nachrichtengarten</p>
+
+                                 
+                                <div class="location-box">
+                                    <div id="location-box-search">
+                                      
+
+                                        
+                                        <a class="fancybox fancybox.iframe" href="php/mypaperly_following.php" target="_new"><input  id="button_a_mypaperlysetting" type="submit" name="" value="My paperly bearbeiten"/></a>
+                                            <a href='/<?php echo $username; ?>'><input  id="button_a_profil" type="submit" name="" value="Profil"/></a>
+                                            <a href='/abmelden'><input  id="button_a_logout" type="submit" name="" value="Logout"/></a>
+                                   
+                                    </div>
+                                   
+                                    <div id="location-box-result">
+                                        <div id="location-box-result-info">
+                                            <!--infoContainer-->
+                                        </div>
+                                    </div>
+                                </div>  
+                            </nav>                            
+                        </div>
+                        
+                        
+                        
                     </div>
                 </div>
             </header>
@@ -114,11 +143,7 @@ $user_id = $_SESSION["user_id"];
                 <div class="wrapper clearfix">
                     <div id="notificationbox">Bitte fülle folgendes Formular aus</div>
                     <div id="content-column">
-                        <section> <div id="mypaperly_edit"> <a class="fancybox fancybox.iframe" href="php/mypaperly_following.php" target="_new"><input id="mypaperly_edit_button" type="submit" name="" value="mypaperly bearbeiten"/></a>
-
-                            </div>
-
-                        </section>
+                      
                         <section>
 
 

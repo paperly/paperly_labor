@@ -185,7 +185,7 @@ $target = '/';
 
 
 
-                        <div id="header-location-box">
+                        <div id="header-navigation-box">
                             <nav role="navigation" id="nav-filter">
 
                                 <p>Wähle deine Stadt:</p>

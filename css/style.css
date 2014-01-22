@@ -314,9 +314,9 @@ input.css3button,
 
 #locationFollow {float: left; }
 /* Timeline */
-#timeline header #header-location-box { float: left; margin-left: -20px; width: 980px; }
-#timeline header #header-location-box p { float: left; margin: 5px 10px 5px 15px; color: #2a2a2a; font-size: 16px; }
-#timeline header #header-location-box input[type="text"] { padding: 5px 5px; width: 200px; border: thin solid #000000;  border-radius: 3px 3px 3px 3px;}
+#timeline header #header-navigation-box { float: left; margin-left: -20px; width: 980px; }
+#timeline header #header-navigation-box p { float: left; margin: 5px 10px 5px 15px; color: #2a2a2a; font-size: 16px; }
+#timeline header #header-navigation-box input[type="text"] { padding: 5px 5px; width: 200px; border: thin solid #000000;  border-radius: 3px 3px 3px 3px;}
 #timeline header #header-navbox { display: table; float: left; margin-left: -20px; width: 980px; }
 #timeline header #header-papercontrolbox { display: table-cell; height: 68px; overflow: hidden; padding-left: 20px; vertical-align: middle; width: 680px; }
 #timeline #content-column { padding-right: 0; width: 975px; padding-left: 5px; }
@@ -637,7 +637,7 @@ input.css3button,
 
 
 }
-#button_a_profil,#button_a_write,#button_a_logout {
+#button_a_profil,#button_a_write,#button_a_logout,#button_a_mypaperlysetting  {
     font-family: HelveticaNeue-Light,Helvetica,Arial,sans-serif; 
     border:0px solid #666666;
     border-bottom-left-radius:8px;
@@ -660,6 +660,12 @@ input.css3button,
 
     margin-left:100px;
     width: 130px;
+
+}
+#button_a_mypaperlysetting {
+
+    margin-left:170px;
+    width: 160px;
 
 }
 #user_linelist_left{
@@ -726,11 +732,12 @@ input.css3button,
 
 }
 #mypaperly_edit{
-    height: 100px;
+    height: 30px;
     float: right;
     position:relative;
-    margin-top: -90px;
+    margin-top: 10px;
     margin-right:20px;
+    margin-bottom: -30px;
 }
 .follow_button_location {
     background-color:#333333;
