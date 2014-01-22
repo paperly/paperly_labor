@@ -148,6 +148,14 @@ function load_article_html($title,$text,$art_id,$link,$creator_id,$bild,$date) {
     }
 
 
+    // town check
+    $sql= "SELECT location.name FROM article_locations_belongs_to,location WHERE article_locations_belongs_to.article = $art_id and article_locations_belongs_to.location = location.location_id Order by article_locations_belongs_to.location DESC LIMIT 1;";
+    $result = mysql_query($sql);
+     $row = mysql_fetch_object($result);
+     $location_name = $row->name;
+    
+    
+    
 
 $user_id = @$_SESSION["user_id"];
     $like = load_likebox($user_id, $art_id);
@@ -160,7 +168,7 @@ $commentbox =load_commentbox_html($art_id);
     $html = '
                                     <article class="timeline-article">  <div class="article-subbox">
                                     <div>' . $bild_html . '</div>
-                                        <p id="article_town">Mannheim</p>
+                                        <p id="article_town">'.$location_name .'</p>
                                         <p id="article_time">'.$time.'</p>
                                          <p id="article_title">'.$title.'</p>
                                   <div class="likebox" id="likebox_' . $art_id . '">' . $like . ' </div>
