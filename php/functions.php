@@ -999,7 +999,7 @@ function load_promotioncalcalation($months, $locations) {
     function getHeaderConfig($headerid) {
     
          
-            $basedir = "localhost";
+            $basedir = "www.paperly.de";
         $html = formatHTMLLineBreak('<base href="http://'.$basedir.'">', 0);
    $html .= formatHTMLLineBreak('<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon; charset=binary">', 8);
       $html .= formatHTMLLineBreak('<link rel="icon" href="images/favicon.ico" type="image/x-icon; charset=binary">', 8);
