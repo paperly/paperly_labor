@@ -1,12 +1,12 @@
 <?php
 
 // DB connect - all-inkl.de
-$verbindung = mysql_connect("paperly.de", "paperly_01_c", "f4s5S3dg3d") or die("Verbindung zur Datenbank konnte nicht hergestellt werden");
+$verbindung = mysql_connect(".de", "", "") or die("Verbindung zur Datenbank konnte nicht hergestellt werden");
 
 // set utf 8
 mysql_set_charset('utf8', $verbindung);
 // choose db
-mysql_select_db("paperly_01_c") or die("Datenbank konnte nicht ausgewählt werden");
+mysql_select_db("") or die("Datenbank konnte nicht ausgewählt werden");
 
 // Wie viel Artikel werden geladen?
 $varLoadLimit = 12;
