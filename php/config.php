@@ -20,8 +20,8 @@ $basedir = "localhost";
 
 // set PDO connection parameter
 $pdoHost = 'mysql:host=paperly.de;dbname=paperly_01_c';
-$pdoUsername = 'paperly_01_c';
-$pdoPassword = 'f4s5S3dg3d';
+$pdoUsername = '';
+$pdoPassword = '';
 // set PDO db connection
 try {
     $pdoConnection = new PDO($pdoHost, $pdoUsername, $pdoPassword);
